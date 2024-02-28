@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #2e2e2e;
+    color: white;
+}
+nav {
+    background-color: #151515;
+}
+.navbar {
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+    align-items: center;
+    text-align: center;
+}
+nav a:nth-child(1) img {
+    height: 70px;
+}
+nav a:nth-child(2) img {
+    height: 70px;
+}
+
+.items {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.item {
+    width: 500px;
+}
+.product {
+    background-color: rgb(15, 15, 15);
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 450px;
+}
+.product img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    max-height: 400px;
+    width: auto;
+}
+
+.product-info {
+    background-color: #151515;
+    padding: 30px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.product-price {
+    display: flex;
+    justify-content: space-around;
+    background-color: #151515;
+    text-align: center;
+    padding: 30px;
+}
+.product-price button {
+    margin: 0;
+    background-color: rgb(48, 48, 48);
+    color: white;
+    border-color: #3a3a3a;
+    border-radius: 10px;
+}
+.ingredients {
+    display: flex;
+}
+.ingredients img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.logo-subtext {
+    color: rgb(0, 125, 125);
+    margin: 0;
+    margin-left: 15px;
+    font-size: 40px;
+}
+.header {
+    text-align: center;
+    font-size: large;
+    margin-left: 5%;
+    margin-right: 5%;
+}
