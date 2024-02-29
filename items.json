@@ -1,9 +1,10 @@
 [
     {
         "id": 1,
+        "type": "burger",
         "name": "De Mikert Burger",
         "price": 15,
-        "image": "burger.png",
+        "image": "pictures/burger.png",
         "ingredients": 
         [
             {
@@ -47,9 +48,10 @@
     },
     {
         "id": 2,
+        "type": "burger",
         "name": "Chicken Burger",
         "price": 12,
-        "image": "chicken.png",
+        "image": "pictures/chicken.png",
         "ingredients": 
         [
             {
@@ -84,9 +86,10 @@
     },
     {
         "id": 3,
+        "type": "burger",
         "name": "Fish Burger",
         "price": 10,
-        "image": "fish.png",
+        "image": "pictures/fish.png",
         "ingredients": 
         [
             {
@@ -114,6 +117,85 @@
                 "image": "burgerbun2.png"
             
             }
+        ]
+    },
+    {
+        "id": 4,
+        "type": "sandwich",
+        "name": "Club Sandwich",
+        "price": 10,
+        "image": "pictures/club.png",
+        "ingredients": 
+        [
+            {
+                "name": "Burger Bun",
+                "image": "burgerbun.png"
+            },
+            {
+                "name": "Egg",
+                "image": "egg.png"
+            },
+            {
+                "name": "Tomato",
+                "image": "tomato.png"
+            },
+            {
+                "name": "lettuce",
+                "image": "lettuce.png"
+            },
+            {
+                "name": "Burger Bun",
+                "image": "burgerbun2.png"
+            },
+            {
+                "name": "Cocktail saus",
+                "image": "lichtorangesaus.png"
+            },
+            {
+                "name": "Chicken patty",
+                "image": "chicken.png"
+            },
+            {
+                "name": "Burger Bun",
+                "image": "burgerbun2.png"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "type": "sandwich",
+        "name": "Ham and Cheese Sandwich",
+        "price": 8,
+        "image": "pictures/ham.png",
+        "ingredients": 
+        [
+            {
+                "name": "Burger Bun",
+                "image": "burgerbun.png"
+            },
+            {
+                "name": "Ham",
+                "image": "ham.png"
+            },
+            {
+                "name": "Cheese",
+                "image": "cheese.png"
+            },
+            {
+                "name": "Burger Bun",
+                "image": "burgerbun2.png"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "type": "icecream",
+        "name": "Moekoe's Mango Icecream",
+        "price": 8,
+        "image": "pictures/moekoecollab.png",
+        "ingredients": 
+        [
+
         ]
     }
 ]
