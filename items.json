@@ -3,7 +3,7 @@
         "id": 1,
         "name": "De Mikert Burger",
         "price": 15,
-        "image": "pictures/burger.png",
+        "image": "burger.png",
         "ingredients": 
         [
             {
@@ -49,7 +49,7 @@
         "id": 2,
         "name": "Chicken Burger",
         "price": 12,
-        "image": "pictures/chicken.png",
+        "image": "chicken.png",
         "ingredients": 
         [
             {
@@ -86,7 +86,7 @@
         "id": 3,
         "name": "Fish Burger",
         "price": 10,
-        "image": "pictures/fish.png",
+        "image": "fish.png",
         "ingredients": 
         [
             {
