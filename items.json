@@ -1,0 +1,119 @@
+[
+    {
+        "id": 1,
+        "name": "De Mikert Burger",
+        "price": 15,
+        "image": "pictures/burger.png",
+        "ingredients": 
+        [
+            {
+                "name": "Burger Bun",
+                "image": "burgerbun.png"
+            },
+            {
+                "name": "lettuce",
+                "image": "lettuce.png"
+            },
+            {
+                "name": "Tomato",
+                "image": "tomato.png"
+            },
+            {
+                "name": "Pickle",
+                "image": "pickle.png"
+            },
+            {
+                "name": "Cheese",
+                "image": "cheese.png"
+            },
+            {
+                "name": "Ketchup",
+                "image": "redsaus.png"
+            },
+            {
+                "name": "Beef patty",
+                "image": "patty.png"
+            },
+            {
+                "name": "Red Onion",
+                "image": "redonion.png"
+            },
+            {
+                "name": "Burger Bun",
+                "image": "burgerbun2.png"
+            
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Chicken Burger",
+        "price": 12,
+        "image": "pictures/chicken.png",
+        "ingredients": 
+        [
+            {
+                "name": "Burger Bun",
+                "image": "burgerbun.png"
+            },
+            {
+                "name": "Honey Mustard Sauce",
+                "image": "lichtorangesaus.png"
+            },
+            {
+                "name": "lettuce",
+                "image": "lettuce.png"
+            },
+            {
+                "name": "Pickle",
+                "image": "gebakken-uitjes.png"
+            },
+            {
+                "name": "Cheese",
+                "image": "cheese.png"
+            },
+            {
+                "name": "Chicken patty",
+                "image": "chicken.png"
+            },
+            {
+                "name": "Burger Bun",
+                "image": "burgerbun2.png"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Fish Burger",
+        "price": 10,
+        "image": "pictures/fish.png",
+        "ingredients": 
+        [
+            {
+                "name": "Burger Bun",
+                "image": "burgerbun.png"
+            },
+            {
+                "name": "Ravigotte Saus",
+                "image": "whitesaus.png"
+            },
+            {
+                "name": "Fish patty",
+                "image": "fish.png"
+            },
+            {
+                "name": "Tomato",
+                "image": "tomato.png"
+            },
+            {
+                "name": "lettuce",
+                "image": "lettuce.png"
+            },
+            {
+                "name": "Burger Bun",
+                "image": "burgerbun2.png"
+            
+            }
+        ]
+    }
+]
