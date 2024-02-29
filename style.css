@@ -96,3 +96,11 @@ nav a:nth-child(2) img {
     margin-left: 5%;
     margin-right: 5%;
 }
+
+/* als de pixels minder zijn 600 dan ... */
+
+@media (max-width: 600px) {
+    .logo-subtext {
+        display: none;
+    }
+}
