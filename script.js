@@ -1,6 +1,6 @@
 async function getHeroes() {
     try {
-        const response = await fetch('../items.json');
+        const response = await fetch('items.json');
         if (!response.ok) {
             throw new Error('Failed to fetch heroes');
         }
