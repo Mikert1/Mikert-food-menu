@@ -18,6 +18,7 @@ nav {
 }
 nav a:nth-child(1) img {
     height: 70px;
+    flex-shrink: 1;
 }
 nav a:nth-child(2) img {
     height: 70px;
@@ -93,6 +94,7 @@ nav a:nth-child(2) img {
     margin-left: 15px;
     font-size: 40px;
 }
+
 .header {
     text-align: center;
     font-size: large;
@@ -105,5 +107,8 @@ nav a:nth-child(2) img {
 @media (max-width: 600px) {
     .logo-subtext {
         display: none;
+    }
+    .item {
+        width: 100%;
     }
 }
