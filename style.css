@@ -18,10 +18,13 @@ nav {
 }
 nav a:nth-child(1) img {
     height: 70px;
-    flex-shrink: 1;
+    max-width: 75%;
+    object-fit: contain;
 }
 nav a:nth-child(2) img {
     height: 70px;
+    max-width: 100%;
+    object-fit: contain;
 }
 
 #burgers {
