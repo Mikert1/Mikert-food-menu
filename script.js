@@ -34,7 +34,7 @@ async function leaderboard() {
         </div>
         <div class="product-price">
             <h3>${item.price},-</h3>
-            <button>Add to card</button>
+            <button onclick="addToCard(${item.id})">Add to card</button>
         </div>
         <div class="product-info">
             <h2>ingredienten</h2>
@@ -59,6 +59,25 @@ async function leaderboard() {
     }
 }
 
+function getCard() {
+    let cart = [];
+    if (localStorage.getItem("cart")) {
+        cart = JSON.parse(localStorage.getItem("cart"));
+    }
+    return cart;
+}
+
+function addToCard(id) {
+    console.log("add to card");
+    let cart = [];
+    if (localStorage.getItem("cart")) {
+        cart = JSON.parse(localStorage.getItem("cart"));
+    }
+    cart.push(id);
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+}
+
 
 document.addEventListener("keydown", function (event) {
     if (event.key === "c") {
@@ -69,3 +88,4 @@ document.addEventListener("keydown", function (event) {
 });
 
 leaderboard()
+getCard()

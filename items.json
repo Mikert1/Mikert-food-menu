@@ -166,7 +166,7 @@
         "type": "sandwich",
         "name": "Ham and Cheese Sandwich",
         "price": 8,
-        "image": "pictures/ham.png",
+        "image": "pictures/tosti.png",
         "ingredients": 
         [
             {

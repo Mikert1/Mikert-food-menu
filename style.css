@@ -16,12 +16,12 @@ nav {
     align-items: center;
     text-align: center;
 }
-nav a:nth-child(1) img {
+.logo {
     height: 70px;
     max-width: 75%;
     object-fit: contain;
 }
-nav a:nth-child(2) img {
+nav div img {
     height: 70px;
     max-width: 100%;
     object-fit: contain;
@@ -103,6 +103,34 @@ nav a:nth-child(2) img {
     font-size: large;
     margin-left: 5%;
     margin-right: 5%;
+}
+#cart {
+    display: block;
+
+}
+.cartItem {
+    display: flex;
+    width: 800px;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+}
+
+.cart {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    background-color: #151515;
+    margin-bottom: 10px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.cart img {
+    width: 100px;
+    object-fit: contain;    
+    margin-right: 20px;
 }
 
 /* als de pixels minder zijn 600 dan ... */
