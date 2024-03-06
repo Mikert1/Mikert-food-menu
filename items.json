@@ -121,6 +121,16 @@
     },
     {
         "id": 4,
+        "type": "bijgerecht",
+        "name": "Patat",
+        "price": 3.19,
+        "image": "pictures/patat.png",
+        "ingredients": 
+        [
+        ]
+    },
+    {
+        "id": 5,
         "type": "sandwich",
         "name": "Club Sandwich",
         "price": 10,
@@ -162,7 +172,7 @@
         ]
     },
     {
-        "id": 5,
+        "id": 6,
         "type": "sandwich",
         "name": "Ham and Cheese Sandwich",
         "price": 8,
@@ -188,7 +198,7 @@
         ]
     },
     {
-        "id": 6,
+        "id": 7,
         "type": "icecream",
         "name": "Moekoe's Mango Icecream",
         "price": 8,

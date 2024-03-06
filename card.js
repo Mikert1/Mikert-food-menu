@@ -36,6 +36,7 @@ function removeFromCard(id) {
 }
 
 async function showCart() {
+    total = 0;
     const cart = await getCart();
     cart.sort();
     const data = await getData();
@@ -66,8 +67,22 @@ async function showCart() {
                     </div>
                 `;
                 cartElement.appendChild(itemElement);
+                total += data[j].price;
             }
         }
     }
+    document.getElementById('total').innerHTML = `
+        <h1>Total: € ${total},-</h1>
+        <h3>Item amount: ${cart.length}</h3>
+    `;
+}
+function purchase() {
+    const data = localStorage.getItem("cart");
+    if (localStorage.getItem("purchased")) {
+        localStorage.setItem("purchased", localStorage.getItem("purchased") + data);
+    } else {
+        localStorage.setItem("purchased", data);
+    }
+    localStorage.removeItem("cart");
 }
 showCart();
