@@ -50,16 +50,20 @@ async function showCart() {
                 const itemElement = document.createElement('div');
                 itemElement.innerHTML = `
                 <div class="cartItem">
-                <div class="cart">
-                <img src="${data[j].image}" alt="burger">
-                <h1>${data[j].name}</h1>
-                <h3>${data[j].price},-</h3>
-                <button onclick="removeFromCard(${data[j].id})">Remove from card</button>
-                <h2>ingredienten</h2>
-                    <div class="ingredients">
-                    
+                    <div class="cart">
+                        <div class="cartInfo">
+                            <h3>${data[j].name}</h3>
+                            <img src="${data[j].image}" alt="burger">
+                        </div>
+                        <div class="cartInfo">
+                            <button onclick="removeFromCard(${data[j].id})">Remove from card</button>
+                            <h2>${data[j].price},-</h3>
+                        </div>
                     </div>
-                </div>
+                        <div class="ingredients">
+                    
+                        </div>
+                    </div>
                 </div>
                 `;
                 cartElement.appendChild(itemElement);
