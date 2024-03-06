@@ -48,8 +48,8 @@ async function showCart() {
             console.log(data[j].id);
             if (data[j].id === item) {
                 const itemElement = document.createElement('div');
+                itemElement.classList.add('cartItem');
                 itemElement.innerHTML = `
-                <div class="cartItem">
                     <div class="cart">
                         <div class="cartInfo">
                             <h3>${data[j].name}</h3>
@@ -64,7 +64,6 @@ async function showCart() {
                     
                         </div>
                     </div>
-                </div>
                 `;
                 cartElement.appendChild(itemElement);
             }
