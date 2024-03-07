@@ -44,3 +44,5 @@ setInterval(function() {
 }, 5000);
 
 setItems();
+
+// history.pushState({}, null, '/admin');

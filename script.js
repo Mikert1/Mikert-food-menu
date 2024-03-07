@@ -57,6 +57,7 @@ async function leaderboard() {
         }
         leaderboardElement.appendChild(itemElement);
     }
+    checkForCart()
 }
 
 function getCard() {
@@ -75,7 +76,18 @@ function addToCard(id) {
     }
     cart.push(id);
     localStorage.setItem("cart", JSON.stringify(cart));
+    checkForCart()
 
+}
+
+function checkForCart() {
+    if (localStorage.getItem("cart")) {
+        dot = document.getElementById("redDot");
+        dot.innerHTML = `
+        <img src="cart.png" alt="cart">
+        <h1 class="dot"> ${JSON.parse(localStorage.getItem("cart")).length} </h1>
+        `;
+    }
 }
 
 
@@ -89,3 +101,5 @@ document.addEventListener("keydown", function (event) {
 
 leaderboard()
 getCard()
+checkForCart()
+console.log("script.js");

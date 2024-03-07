@@ -32,6 +32,9 @@ function removeFromCard(id) {
         }
     }
     localStorage.setItem("cart", JSON.stringify(cart));
+    if (cart.length <= 0) {
+        localStorage.removeItem("cart");
+    }   
     showCart();
 }
 
@@ -75,7 +78,26 @@ async function showCart() {
         <h1>Total: € ${total},-</h1>
         <h3>Item amount: ${cart.length}</h3>
     `;
+    checkForCart()
 }
+
+function checkForCart() {
+    const dot = document.getElementById("redDot");
+    if (localStorage.getItem("cart")) {
+        console.log(localStorage.getItem("cart").length);
+        dot.innerHTML = `
+        <img src="cart.png" alt="cart">
+        <h1 class="dot"> ${JSON.parse(localStorage.getItem("cart")).length} </h1>
+        `;
+    }
+    else {
+        dot = document.getElementById("redDot");
+        dot.innerHTML = `    
+        <img src="cart.png" alt="cart">
+        `;
+    }
+}
+
 function purchase() {
     const data = localStorage.getItem("cart");
     if (localStorage.getItem("purchased")) {
