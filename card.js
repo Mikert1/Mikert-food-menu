@@ -87,11 +87,11 @@ function checkForCart() {
         console.log(localStorage.getItem("cart").length);
         dot.innerHTML = `
         <img src="cart.png" alt="cart">
-        <h1 class="dot"> ${JSON.parse(localStorage.getItem("cart")).length} </h1>
+        <h1 class="dot"> ${JSON.parse(localStorage.getItem("cart")).length > 9 ? '9+' : JSON.parse(localStorage.getItem("cart")).length} </h1>
         `;
     }
     else {
-        dot = document.getElementById("redDot");
+        console.log("");
         dot.innerHTML = `    
         <img src="cart.png" alt="cart">
         `;

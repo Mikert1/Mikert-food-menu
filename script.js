@@ -85,7 +85,7 @@ function checkForCart() {
         dot = document.getElementById("redDot");
         dot.innerHTML = `
         <img src="cart.png" alt="cart">
-        <h1 class="dot"> ${JSON.parse(localStorage.getItem("cart")).length} </h1>
+        <h1 class="dot"> ${JSON.parse(localStorage.getItem("cart")).length > 9 ? '9+' : JSON.parse(localStorage.getItem("cart")).length} </h1>
         `;
     }
 }
