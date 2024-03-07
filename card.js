@@ -42,7 +42,14 @@ async function showCart() {
     total = 0;
     const cart = await getCart();
     cart.sort();
-    const data = await getData();
+    if (localStorage.getItem("data")) {
+        console.log("data form localstorage");
+        data = JSON.parse(localStorage.getItem("data"));
+    } else {
+        console.log("data from fetch");
+        data = await getData();
+    }
+    console.log(data);
     const cartElement = document.getElementById('cart');
     cartElement.innerHTML = '';
     for (let i = 0; i < cart.length; i++) {
@@ -100,11 +107,17 @@ function checkForCart() {
 
 function purchase() {
     const data = localStorage.getItem("cart");
-    if (localStorage.getItem("purchased")) {
-        localStorage.setItem("purchased", localStorage.getItem("purchased") + data);
+    if (data === null) {
+        confirm("You have no items in your cart");
+        return;
     } else {
-        localStorage.setItem("purchased", data);
+        if (localStorage.getItem("purchased")) {
+            localStorage.setItem("purchased", localStorage.getItem("purchased") + data);
+        } else {
+            localStorage.setItem("purchased", data);
+        }
+        localStorage.removeItem("cart");
+        window.location.href = "confirm.html";
     }
-    localStorage.removeItem("cart");
 }
 showCart();

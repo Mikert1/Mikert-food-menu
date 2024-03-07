@@ -40,6 +40,7 @@ nav div img {
 }
 .item {
     width: 500px;
+    height: 100%;
 }
 .product {
     background-color: rgb(15, 15, 15);
@@ -60,6 +61,7 @@ nav div img {
     padding: 30px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    height: 100%;
 }
 .product-price {
     display: flex;
@@ -204,6 +206,35 @@ nav div img {
     text-align: center;
     align-items: center;
     justify-content: center;
+}
+
+#items {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#items .item {
+    display: flex;
+    height: 200px;
+}
+
+#items .item img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-right: 20px;
+}
+
+.adminProduct {
+    display: flex;
+}
+
+.disable {
+    background-color: red;
 }
 
 /* als de pixels minder zijn 600 dan ... */
