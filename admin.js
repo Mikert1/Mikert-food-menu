@@ -29,6 +29,9 @@ function enable(id) {
     localStorage.setItem("data", JSON.stringify(data));
     setItems();
 }
+function edit(id) {
+    window.location.href = `edit.html?id=${id}`;
+}
 
 async function setItems() {
     let data;
@@ -56,7 +59,7 @@ async function setItems() {
             </div>
             <div>
                 ${item.disabled == true ? `<button onclick="enable(${item.id})" class="adminEnable">Enable</button>` : `<button onclick="disable(${item.id})" class="adminDisable">Disable</button>`}
-                <button class="adminEdit">Edit</button>
+                <button class="adminEdit" onclick="edit(${item.id})">Edit</button>
             </div>
         </div>
         `;

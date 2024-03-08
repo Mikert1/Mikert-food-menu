@@ -45,7 +45,7 @@
             
             }
         ],
-        "disabled": "false"
+        "disabled": false
     },
     {
         "id": 2,
@@ -84,7 +84,7 @@
                 "image": "burgerbun2.png"
             }
         ],
-        "disabled": "false"
+        "disabled": false
     },
     {
         "id": 3,
@@ -120,7 +120,7 @@
             
             }
         ],
-        "disabled": "false"
+        "disabled": false
     },
     {
         "id": 4,
@@ -131,7 +131,7 @@
         "ingredients": 
         [
         ],
-        "disabled": "false"
+        "disabled": false
     },
     {
         "id": 5,
@@ -174,7 +174,7 @@
                 "image": "burgerbun2.png"
             }
         ],
-        "disabled": "false"
+        "disabled": false
     },
     {
         "id": 6,
@@ -201,7 +201,7 @@
                 "image": "burgerbun2.png"
             }
         ],
-        "disabled": "false"
+        "disabled": false
     },
     {
         "id": 7,
@@ -213,6 +213,6 @@
         [
 
         ],
-        "disabled": "false"
+        "disabled": false
     }
 ]

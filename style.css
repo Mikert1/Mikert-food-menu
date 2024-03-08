@@ -74,7 +74,7 @@ nav div img {
     margin: 0;
     background-color: rgb(48, 48, 48);
     color: white;
-    border-color: #3a3a3a;
+    border-color: #00ffff;
     border-radius: 10px;
 }
 .ingredients {
@@ -145,7 +145,7 @@ nav div img {
     margin: 0;
     background-color: rgb(48, 48, 48);
     color: white;
-    border-color: #3a3a3a;
+    border-color: #00ffff;
     border-radius: 10px;
 }
 
@@ -179,7 +179,7 @@ nav div img {
     margin: 0;
     background-color: rgb(48, 48, 48);
     color: white;
-    border-color: #3a3a3a;
+    border-color: #00ffff;
     border-radius: 10px;
     padding: 20px;
 }
@@ -248,7 +248,7 @@ nav div img {
 }
 
 .disable {
-    background-color: red;
+    border-color: red !important;
 }
 
 .adminEnable {
@@ -271,6 +271,37 @@ nav div img {
     border-color: cyan;
     border-radius: 5px;
     padding: 0.5rem;
+}
+
+.editProduct {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #151515;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 50px;
+    padding: 50px;
+}
+
+.editProduct img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-right: 20px;
+}
+
+input {
+    width: 500px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: #242424;
+    color: white;
+    border: 1px solid #00ffff;
+    border-radius: 4px;
+    box-sizing: border-box;
+
 }
 
 /* als de pixels minder zijn 600 dan ... */
