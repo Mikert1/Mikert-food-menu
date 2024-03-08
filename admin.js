@@ -47,7 +47,21 @@ async function setItems() {
         data = await getData();
     }
     const items = document.getElementById("items");
-    items.innerHTML = "";
+    items.innerHTML = `
+    <div class="adminProduct item">
+        <div>
+            <p><strong>Name</strong></p>
+        </div>
+        <div>
+            <p><strong>Image</strong></p>
+        </div>
+        <div>
+            <p><strong>Price</strong></p>
+        </div>
+        <div>
+            <p><strong>Actions</strong></p>
+        </div>
+    </div>`;
     for (let i = 0; i < data.length; i++) {
         console.log(data[i]);
         const item = data[i];
@@ -56,13 +70,13 @@ async function setItems() {
         itemElement.innerHTML = `
         <div class="adminProduct">
             <div>
-                <h1>${item.name}</h1>
+                <p>${item.name}</p>
             </div>
             <div>
                 <img src="${item.image}" alt="burger">
             </div>
             <div>
-                <h3>${item.price},-</h3>
+                <p>${item.price},-</p>
             </div>
             <div>
                 ${item.disabled == true ? `<button onclick="enable(${item.id})" class="adminEnable">Enable</button>` : `<button onclick="disable(${item.id})" class="adminDisable">Disable</button>`}

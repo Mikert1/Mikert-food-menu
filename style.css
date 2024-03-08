@@ -220,7 +220,7 @@ nav div img {
 
 #items .item {
     display: flex;
-    height: 200px;
+    height: 120px;
     width: 90%;
 }
 
@@ -228,8 +228,11 @@ nav div img {
     width: 100px;
     height: 100px;
     object-fit: contain;
-    margin-right: 20px;
-    
+}
+
+#items .item:first-child {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .adminProduct {
@@ -241,6 +244,7 @@ nav div img {
     height: 100px;
     width: 100%;
 }
+
 
 .adminProduct div {
     width: 25%;
@@ -294,6 +298,7 @@ nav div img {
 
 input {
     width: 500px;
+    max-width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     background-color: #242424;
