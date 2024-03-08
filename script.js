@@ -34,7 +34,7 @@ async function showMenu() {
         </div>
         <div class="product-price">
             <h3>${item.price},-</h3>
-            ${item.disabled == true ? `<button class="disable" onclick="addToCard(${item.id})">Not avalible</button>` : `<button onclick="addToCard(${item.id})">Add to card</button>`}
+            ${item.disabled == true ? `<button class="disable">Not avalible</button>` : `<button onclick="addToCard(${item.id})">Add to card</button>`}
         </div>
         <div class="product-info">
             <h2>ingredienten</h2>

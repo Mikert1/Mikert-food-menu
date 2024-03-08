@@ -22,6 +22,14 @@ function disable(id) {
     setItems();
 }
 
+function enable(id) {
+    const data = JSON.parse(localStorage.getItem("data"));
+    const item = data.find(item => item.id === id);
+    item.disabled = false;
+    localStorage.setItem("data", JSON.stringify(data));
+    setItems();
+}
+
 async function setItems() {
     let data;
     if (localStorage.getItem("data")) {
@@ -37,17 +45,18 @@ async function setItems() {
         itemElement.classList.add('item');
         itemElement.innerHTML = `
         <div class="adminProduct">
-            <h1>${item.name}</h1>
-            <img src="${item.image}" alt="burger">
-        </div>
-        <div>
-            <h3>${item.price},-</h3>
-            <button onclick="disable(${item.id})">Add to card</button>
-        </div>
-        <div>
-            <h2>ingredienten</h2>
-            <div class="ingredients">
-
+            <div>
+                <h1>${item.name}</h1>
+            </div>
+            <div>
+                <img src="${item.image}" alt="burger">
+            </div>
+            <div>
+                <h3>${item.price},-</h3>
+            </div>
+            <div>
+                ${item.disabled == true ? `<button onclick="enable(${item.id})" class="adminEnable">Enable</button>` : `<button onclick="disable(${item.id})" class="adminDisable">Disable</button>`}
+                <button class="adminEdit">Edit</button>
             </div>
         </div>
         `;

@@ -211,6 +211,7 @@ nav div img {
 #items {
     display: flex;
     flex-direction: column;
+    width: 100%;
     margin-left: 5%;
     margin-right: 5%;
     margin-top: 20px;
@@ -220,6 +221,7 @@ nav div img {
 #items .item {
     display: flex;
     height: 200px;
+    width: 90%;
 }
 
 #items .item img {
@@ -227,14 +229,48 @@ nav div img {
     height: 100px;
     object-fit: contain;
     margin-right: 20px;
+    
 }
 
 .adminProduct {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #151515;
+    border-radius: 20px;
+    height: 100px;
+    width: 100%;
+}
+
+.adminProduct div {
+    width: 25%;
+    text-align: center;
 }
 
 .disable {
     background-color: red;
+}
+
+.adminEnable {
+    background-color: #242424;
+    color: white;
+    border-color: green;
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+.adminDisable {
+    background-color: #242424;
+    color: white;
+    border-color: red;
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+.adminEdit {
+    background-color: #242424;
+    color: white;
+    border-color: cyan;
+    border-radius: 5px;
+    padding: 0.5rem;
 }
 
 /* als de pixels minder zijn 600 dan ... */

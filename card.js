@@ -4,8 +4,12 @@ async function getData() {
         if (!response.ok) {
             throw new Error('Failed to fetch heroes');
         }
-        const data = await response.json();
-        localStorage.setItem("data", JSON.stringify(data));
+        let data = await response.json();
+        if (localStorage.getItem("data")) {
+            data = JSON.parse(localStorage.getItem("data"));
+        } else {
+            data = localStorage.setItem("data", JSON.stringify(data));;
+        }
         return data;
     } catch (error) {
         console.error('Error fetching heroes:', error);
@@ -34,29 +38,19 @@ function removeFromCard(id) {
     localStorage.setItem("cart", JSON.stringify(cart));
     if (cart.length <= 0) {
         localStorage.removeItem("cart");
-    }   
+    }
     showCart();
 }
 
 async function showCart() {
-    total = 0;
+    let total = 0;
     const cart = await getCart();
-    cart.sort();
-    if (localStorage.getItem("data")) {
-        console.log("data form localstorage");
-        data = JSON.parse(localStorage.getItem("data"));
-    } else {
-        console.log("data from fetch");
-        data = await getData();
-    }
-    console.log(data);
+    let data = await getData();
     const cartElement = document.getElementById('cart');
     cartElement.innerHTML = '';
     for (let i = 0; i < cart.length; i++) {
-        console.log(cart[i]);
         const item = cart[i];
         for (let j = 0; j < data.length; j++) {
-            console.log(data[j].id);
             if (data[j].id === item) {
                 const itemElement = document.createElement('div');
                 itemElement.classList.add('cartItem');
