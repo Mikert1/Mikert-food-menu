@@ -17,6 +17,24 @@ async function getData() {
     }
 }
 
+function deleteItem(id) {
+    const data = JSON.parse(localStorage.getItem("data"));
+    const item = data.find(item => item.id === id);
+    data.splice(data.indexOf(item), 1);
+    localStorage.setItem("data", JSON.stringify(data));
+    window.location.href = "admin.html";
+}
+
+function save(id) {
+    const data = JSON.parse(localStorage.getItem("data"));
+    const item = data.find(item => item.id === id);
+    item.name = document.getElementById("name").value;
+    item.price = document.getElementById("price").value;
+    item.image = document.getElementById("image").value;
+    localStorage.setItem("data", JSON.stringify(data));
+    window.location.href = "admin.html";
+}
+
 function preview() {
     document.getElementById("pre").src = document.getElementById("image").value;
 }
@@ -25,7 +43,7 @@ async function setItem() {
     let data = await getData();
     const editElement = document.getElementById("edit");
     const urlParams = new URLSearchParams(window.location.search);
-    id = Number(urlParams.get('id'));
+    let id = Number(urlParams.get('id'));
     const item = data.find((item, index) => {
         if (item.id === id) {
             indexInData = index;
@@ -49,11 +67,11 @@ async function setItem() {
             <input type="text" id="image" value="${item.image}">
         </div>
         </from>
-            <button onclick="preview()">Preview</button>
+            <button class="adminEdit" onclick="preview()">Preview</button>
         <img src="${item.image}" id="pre" alt="burger">
         <div>
-            ${item.disabled == true ? `<button onclick="enable(${item.id})" class="adminEnable">Enable</button>` : `<button onclick="disable(${item.id})" class="adminDisable">Disable</button>`}
-            <button class="adminEdit" onclick="edit(${item.id})">Edit</button>
+            <button class="adminDisable" onclick="deleteItem(${item.id})">Delete</button>
+            <button class="adminEdit" onclick="save(${item.id})">Save</button>
         </div>
         `;
     }

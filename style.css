@@ -304,6 +304,27 @@ input {
 
 }
 
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+.addButton {
+    margin: 0;
+    background-color: rgb(48, 48, 48);
+    color: white;
+    border-color: #00ffff !important;
+    border-radius: 50% !important;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+}
+
 /* als de pixels minder zijn 600 dan ... */
 
 @media (max-width: 600px) {

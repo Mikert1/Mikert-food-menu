@@ -14,6 +14,11 @@ async function getData() {
     }
 }
 
+function restore() {
+    localStorage.removeItem("data");
+    setItems();
+}
+
 function disable(id) {
     const data = JSON.parse(localStorage.getItem("data"));
     const item = data.find(item => item.id === id);
@@ -36,11 +41,13 @@ function edit(id) {
 async function setItems() {
     let data;
     if (localStorage.getItem("data")) {
+        console.log("Using local data");
         data = JSON.parse(localStorage.getItem("data"));
     } else {
         data = await getData();
     }
     const items = document.getElementById("items");
+    items.innerHTML = "";
     for (let i = 0; i < data.length; i++) {
         console.log(data[i]);
         const item = data[i];
