@@ -52,8 +52,10 @@ async function setOrders() {
     const items = document.getElementById("items");
     items.innerHTML = ``;
     let item;
-    for (let i = 0; i < orders.length; i++) {
-        for (let j = 0; j < data.length; j++) {
+    for (let j = 0; j < data.length; j++) {
+        for (let i = 0; i < orders.length; i++) {
+            const OrderElement = document.createElement('div');
+            OrderElement.classList.add('orders');
             for (let l = 0; l < orders[i].length; l++) {
                 console.log(data[j].id + " " + orders[i][l]);
                 if (data[j].id === orders[i][l]) {
@@ -78,9 +80,9 @@ async function setOrders() {
                         </div>
                     </div>
                     `;
-                    items.appendChild(itemElement);
+                    OrderElement.appendChild(itemElement);
                 }
-                
+                items.appendChild(OrderElement);
             }
         }
     }

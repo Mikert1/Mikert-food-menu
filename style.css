@@ -349,6 +349,11 @@ input {
 
 }
 
+.orders {
+    margin: 5px;
+    background-color: #151515;
+}
+
 /* als de pixels minder zijn 600 dan ... */
 
 @media (max-width: 600px) {
