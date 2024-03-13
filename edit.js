@@ -47,6 +47,8 @@ function create() {
     item.name = document.getElementById("name").value;
     item.price = document.getElementById("price").value;
     item.image = document.getElementById("image").value;
+    item.ingredients = [];
+    item.disabled = true;
     data.push(item);
     localStorage.setItem("data", JSON.stringify(data));
     window.location.href = "admin.html";

@@ -105,11 +105,13 @@ function purchase() {
         confirm("You have no items in your cart");
         return;
     } else {
-        if (localStorage.getItem("purchased")) {
-            localStorage.setItem("purchased", localStorage.getItem("purchased") + data);
-        } else {
-            localStorage.setItem("purchased", data);
+        //check if the localstorage item purchased exists and then add the new data to it
+        if (!localStorage.getItem("purchased")) {
+            localStorage.setItem("purchased", JSON.stringify([]));
         }
+        let purchased = JSON.parse(localStorage.getItem("purchased"));
+        purchased.push(JSON.parse(data));
+        localStorage.setItem("purchased", JSON.stringify(purchased));
         localStorage.removeItem("cart");
         window.location.href = "confirm.html";
     }

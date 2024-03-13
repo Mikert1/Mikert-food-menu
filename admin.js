@@ -1,3 +1,4 @@
+let selectedDashboard = true;
 async function getData() {
     try {
         const response = await fetch('items.json');
@@ -38,8 +39,56 @@ function edit(id) {
     window.location.href = `edit.html?id=${id}`;
 }
 
+async function setOrders() {
+    selectedDashboard = false;
+    let data;
+    if (localStorage.getItem("data")) {
+        console.log("Using local data");
+        data = JSON.parse(localStorage.getItem("data"));
+    } else {
+        data = await getData();
+    }
+    let orders = JSON.parse(localStorage.getItem("purchased"));
+    const items = document.getElementById("items");
+    items.innerHTML = ``;
+    let item;
+    for (let i = 0; i < orders.length; i++) {
+        for (let j = 0; j < data.length; j++) {
+            for (let l = 0; l < orders[i].length; l++) {
+                console.log(data[j].id + " " + orders[i][l]);
+                if (data[j].id === orders[i][l]) {
+                    console.log("Found");
+                    item = data[j];
+                    const itemElement = document.createElement('div');
+                    itemElement.classList.add('item');
+                    itemElement.innerHTML = `
+                    <div class="adminProduct">
+                        <div>
+                            <p>${item.name}</p>
+                        </div>
+                        <div>
+                            <img src="${item.image}" alt="burger">
+                        </div>
+                        <div>
+                            <p>${item.price},-</p>
+                        </div>
+                        <div>
+                            ${item.disabled == true ? `<button onclick="enable(${item.id})" class="adminEnable">Enable</button>` : `<button onclick="disable(${item.id})" class="adminDisable">Disable</button>`}
+                            <button class="adminEdit" onclick="edit(${item.id})">Edit</button>
+                        </div>
+                    </div>
+                    `;
+                    items.appendChild(itemElement);
+                }
+                
+            }
+        }
+    }
+}
+
 async function setItems() {
     let data;
+    selectedDashboard = true;
     if (localStorage.getItem("data")) {
         console.log("Using local data");
         data = JSON.parse(localStorage.getItem("data"));
@@ -63,7 +112,6 @@ async function setItems() {
         </div>
     </div>`;
     for (let i = 0; i < data.length; i++) {
-        console.log(data[i]);
         const item = data[i];
         const itemElement = document.createElement('div');
         itemElement.classList.add('item');
@@ -88,8 +136,12 @@ async function setItems() {
     }
 }
 
-setInterval(function() {
-    setItems();
-}, 5000);
+// setInterval(function() {
+//     if (selectedDashboard == true) {
+//         setItems();
+//     } else {
+//         setOrders();
+//     }
+// }, 5000);
 
 setItems();
