@@ -98,9 +98,9 @@ document.addEventListener("keydown", function (event) {
     }
 });
 
-// setInterval(function() {
-//     showMenu();
-// }, 5000);
+setInterval(function() {
+    showMenu();
+}, 5000);
 
 showMenu()
 getCard()

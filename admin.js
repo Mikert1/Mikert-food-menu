@@ -88,8 +88,8 @@ async function setItems() {
     }
 }
 
-// setInterval(function() {
-//     setItems();
-// }, 5000);
+setInterval(function() {
+    setItems();
+}, 5000);
 
 setItems();

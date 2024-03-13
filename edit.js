@@ -2,7 +2,7 @@ async function getData() {
     try {
         const response = await fetch('items.json');
         if (!response.ok) {
-            throw new Error('Failed to fetch heroes');
+            throw new Error('Failed to fetch');
         }
         let data = await response.json();
         if (localStorage.getItem("data")) {
@@ -12,7 +12,7 @@ async function getData() {
         }
         return data;
     } catch (error) {
-        console.error('Error fetching heroes:', error);
+        console.error('Error fetching:', error);
         throw error;
     }
 }
@@ -34,6 +34,24 @@ function save(id) {
     localStorage.setItem("data", JSON.stringify(data));
     window.location.href = "admin.html";
 }
+function create() {
+    const data = JSON.parse(localStorage.getItem("data"));
+    const item = {};
+    for (let i = 0; i < data.length + 1; i++) {
+        if (data.find(item => item.id === i) === undefined) {
+            item.id = i;
+            break;
+        }
+    }
+    console.log(item.id);
+    item.name = document.getElementById("name").value;
+    item.price = document.getElementById("price").value;
+    item.image = document.getElementById("image").value;
+    data.push(item);
+    localStorage.setItem("data", JSON.stringify(data));
+    window.location.href = "admin.html";
+
+}
 
 function preview() {
     document.getElementById("pre").src = document.getElementById("image").value;
@@ -44,10 +62,13 @@ async function setItem() {
     const editElement = document.getElementById("edit");
     const urlParams = new URLSearchParams(window.location.search);
     let id = Number(urlParams.get('id'));
-    const item = data.find((item, index) => {
-        if (item.id === id) {
+    const item = data.find((items, index) => {
+        if (items.id === id) {
             indexInData = index;
-            return item;
+            return items;
+        }
+        if (id === null) {
+            return null;
         }
     });
     if (item) {
@@ -65,13 +86,37 @@ async function setItem() {
             <div>
             <label for="image">Image:</label>
             <input type="text" id="image" value="${item.image}">
+            <button class="editPreview" onclick="preview()">Preview</button>
         </div>
         </from>
-            <button class="adminEdit" onclick="preview()">Preview</button>
-        <img src="${item.image}" id="pre" alt="burger">
+        <img src="${item.image}" id="pre" alt="Foto Preview">
         <div>
             <button class="adminDisable" onclick="deleteItem(${item.id})">Delete</button>
             <button class="adminEdit" onclick="save(${item.id})">Save</button>
+        </div>
+        `;
+    }
+    if (item == null) {
+        editElement.innerHTML = `
+        <from>
+        <div class="editProduct">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name">
+            </div>
+            <div>
+                <label for="price">Price:</label>
+                <input type="number" id="price">
+            </div>
+            <div>
+            <label for="image">Image:</label>
+            <input type="text" id="image" value="pictures/image.png">
+            <button class="editPreview" onclick="preview()">Preview</button>
+        </div>
+        </from>
+        <img src="pictures/image.png" id="pre" alt="Foto Preview">
+        <div>
+            <button class="adminEdit" onclick="create()">Create</button>
         </div>
         `;
     }
