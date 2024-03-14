@@ -100,17 +100,21 @@ function checkForCart() {
 }
 
 function purchase() {
-    const data = localStorage.getItem("cart");
+    let data = JSON.parse(localStorage.getItem("cart"));
     if (data === null) {
         confirm("You have no items in your cart");
         return;
-    } else {
-        
+    } else { 
         if (!localStorage.getItem("purchased")) {
             localStorage.setItem("purchased", JSON.stringify([]));
         }
         let purchased = JSON.parse(localStorage.getItem("purchased"));
-        purchased.push(JSON.parse(data));
+        purchased.push(
+            {
+            "items" : data,
+            "id": 1,
+            }
+        );
         localStorage.setItem("purchased", JSON.stringify(purchased));
         localStorage.removeItem("cart");
         window.location.href = "confirm.html";

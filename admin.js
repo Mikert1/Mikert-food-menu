@@ -62,8 +62,8 @@ function listItemsOfOrder(order, data) {
     const items = document.getElementById("items");
     const orderElement = document.createElement('div');
     orderElement.classList.add('orders');
-    orderElement.innerHTML = `<h1>Table: ${order[0].table}</h1>`;
-    for (const orderItemId of order) {
+    orderElement.innerHTML = `<h1>Table: ${order.id}</h1>`;
+    for (const orderItemId of order.items) {
         const item = data.find(item => item.id === orderItemId);
         const itemElement = document.createElement('div');
         itemElement.classList.add('item');
@@ -140,12 +140,12 @@ async function setItems() {
     }
 }
 
-// setInterval(function() {
-//     if (selectedDashboard == true) {
-//         setItems();
-//     } else {
-//         setOrders();
-//     }
-// }, 5000);
+setInterval(function() {
+    if (selectedDashboard == true) {
+        setItems();
+    } else {
+        setOrders();
+    }
+}, 5000);
 
-setItems();
+setOrders();
