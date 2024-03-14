@@ -211,7 +211,7 @@ nav div img {
 #items {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 90%;
     margin-left: 5%;
     margin-right: 5%;
     margin-top: 20px;
@@ -221,7 +221,7 @@ nav div img {
 #items .item {
     display: flex;
     height: 120px;
-    width: 90%;
+    width: 100%;
 }
 
 #items .item img {
@@ -230,7 +230,7 @@ nav div img {
     object-fit: contain;
 }
 
-#items .item:first-child {
+.itemInfo {
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -346,12 +346,16 @@ input {
     display: flex;
     align-items: center;
     text-align: center;
-
 }
 
 .orders {
     margin: 5px;
     background-color: #151515;
+    border-radius: 20px;
+}
+
+.orders h1 {
+    text-align: center;
 }
 
 /* als de pixels minder zijn 600 dan ... */

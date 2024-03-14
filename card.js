@@ -105,7 +105,7 @@ function purchase() {
         confirm("You have no items in your cart");
         return;
     } else {
-        //check if the localstorage item purchased exists and then add the new data to it
+        
         if (!localStorage.getItem("purchased")) {
             localStorage.setItem("purchased", JSON.stringify([]));
         }

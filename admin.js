@@ -51,42 +51,44 @@ async function setOrders() {
     let orders = JSON.parse(localStorage.getItem("purchased"));
     const items = document.getElementById("items");
     items.innerHTML = ``;
-    let item;
-    for (let j = 0; j < data.length; j++) {
-        for (let i = 0; i < orders.length; i++) {
-            const OrderElement = document.createElement('div');
-            OrderElement.classList.add('orders');
-            for (let l = 0; l < orders[i].length; l++) {
-                console.log(data[j].id + " " + orders[i][l]);
-                if (data[j].id === orders[i][l]) {
-                    console.log("Found");
-                    item = data[j];
-                    const itemElement = document.createElement('div');
-                    itemElement.classList.add('item');
-                    itemElement.innerHTML = `
-                    <div class="adminProduct">
-                        <div>
-                            <p>${item.name}</p>
-                        </div>
-                        <div>
-                            <img src="${item.image}" alt="burger">
-                        </div>
-                        <div>
-                            <p>${item.price},-</p>
-                        </div>
-                        <div>
-                            ${item.disabled == true ? `<button onclick="enable(${item.id})" class="adminEnable">Enable</button>` : `<button onclick="disable(${item.id})" class="adminDisable">Disable</button>`}
-                            <button class="adminEdit" onclick="edit(${item.id})">Edit</button>
-                        </div>
-                    </div>
-                    `;
-                    OrderElement.appendChild(itemElement);
-                }
-                items.appendChild(OrderElement);
-            }
-        }
+    for (const order of orders) {
+        listItemsOfOrder(order, data);
     }
 }
+
+// Goes through all items of an order and finds the corresponding data for each item
+// Gives the data back
+function listItemsOfOrder(order, data) {
+    const items = document.getElementById("items");
+    const orderElement = document.createElement('div');
+    orderElement.classList.add('orders');
+    orderElement.innerHTML = `<h1>Table: ${order[0].table}</h1>`;
+    for (const orderItemId of order) {
+        const item = data.find(item => item.id === orderItemId);
+        const itemElement = document.createElement('div');
+        itemElement.classList.add('item');
+        itemElement.innerHTML = `
+        <div class="adminProduct">
+        <div>
+        <p>${item.name}</p>
+        </div>
+            <div>
+            <img src="${item.image}" alt="burger">
+            </div>
+            <div>
+            <p>${item.price},-</p>
+            </div>
+            <div>
+            ${item.disabled == true ? `<button onclick="enable(${item.id})" class="adminEnable">Enable</button>` : `<button onclick="disable(${item.id})" class="adminDisable">Disable</button>`}
+            <button class="adminEdit" onclick="edit(${item.id})">Edit</button>
+            </div>
+        </div>
+        `;
+        orderElement.appendChild(itemElement);
+        items.appendChild(orderElement);
+    }
+}
+
 
 async function setItems() {
     let data;
@@ -99,7 +101,7 @@ async function setItems() {
     }
     const items = document.getElementById("items");
     items.innerHTML = `
-    <div class="adminProduct item">
+    <div class="itemInfo adminProduct item">
         <div>
             <p><strong>Name</strong></p>
         </div>
