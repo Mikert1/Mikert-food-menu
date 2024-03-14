@@ -1,4 +1,4 @@
-let selectedDashboard = true;
+let selectedDashboard = false;
 async function getData() {
     try {
         const response = await fetch('items.json');
@@ -51,8 +51,12 @@ async function setOrders() {
     let orders = JSON.parse(localStorage.getItem("purchased"));
     const items = document.getElementById("items");
     items.innerHTML = ``;
-    for (const order of orders) {
-        listItemsOfOrder(order, data);
+    if (orders == null) {
+        items.innerHTML = `<h1>No orders</h1>`;
+    } else {
+        for (const order of orders) {
+            listItemsOfOrder(order, data);
+        }
     }
 }
 
