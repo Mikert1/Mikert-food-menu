@@ -90,6 +90,17 @@ function listItemsOfOrder(order, data) {
         orderElement.appendChild(itemElement);
         items.appendChild(orderElement);
     }
+    const buttonElemnt = document.createElement('button');
+    buttonElemnt.innerHTML = "Done";
+    buttonElemnt.classList.add('addButton');
+    buttonElemnt.onclick = function() {
+        const orders = JSON.parse(localStorage.getItem("purchased"));
+        const index = orders.indexOf(order);
+        orders.splice(index, 1);
+        localStorage.setItem("purchased", JSON.stringify(orders));
+        setOrders();
+    }
+    items.appendChild(buttonElemnt);
 }
 
 
