@@ -13,6 +13,10 @@ async function loadMenu() {
     }
 }
 
+function removeIngredient(name) {
+    console.log(`remove ${name}`);
+}
+
 async function showMenu() {
     let data;
     if (localStorage.getItem("data")) {
@@ -48,8 +52,13 @@ async function showMenu() {
             const ingredientElement = document.createElement('div');
             ingredientElement.innerHTML = `
             <div class="ingredient">
-                <img src="ingredients/${ingredient.image}" alt="">
-                <h3>${ingredient.name}</h3>
+                <div>
+                    <img src="ingredients/${ingredient.image}" alt="">
+                    <h3>${ingredient.name}</h3>
+                </div>
+                <div>
+                    <button onclick="removeIngredient(${ingredient.name})">-</button>
+                </div>
             </div>
             `;
             itemElement.querySelector('.ingredients').appendChild(ingredientElement);

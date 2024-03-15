@@ -82,8 +82,26 @@ nav div img {
 }
 .ingredient {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
-.ingredient img {
+
+.ingredient div:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.ingredient div button {
+    padding: 4px 8px;
+    background-color: rgb(48, 48, 48);
+    color: white;
+    border-color: #ff0000;
+    border-radius: 10px;
+}
+
+.ingredient div img {
     width: 50px;
     height: 50px;
     margin-right: 10px;
@@ -356,6 +374,12 @@ input {
 
 .orders h1 {
     text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* als de pixels minder zijn 600 dan ... */

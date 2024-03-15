@@ -80,7 +80,10 @@ function listItemsOfOrder(order, data) {
             <img src="${item.image}" alt="burger">
             </div>
             <div>
-            <p>${item.price},-</p>
+            </div>
+            <div class="container">
+            <label for="done">Done:</label>
+            <input type="checkbox" id="done"></input>
             </div>
         </div>
         `;
