@@ -112,11 +112,11 @@ async function setItem() {
             </div>
             <div>
             <label for="image">Image:</label>
-            <input type="text" id="image" value="pictures/image.png">
+            <input type="text" id="image" value="img/image.png">
             <button class="editPreview" onclick="preview()">Preview</button>
         </div>
         </from>
-        <img src="pictures/image.png" id="pre" alt="Foto Preview">
+        <img src="img/image.png" id="pre" alt="Foto Preview">
         <div>
             <button class="adminEdit" onclick="create()">Create</button>
         </div>

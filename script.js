@@ -13,8 +13,37 @@ async function loadMenu() {
     }
 }
 
-function removeIngredient(name) {
+async function removeIngredient(name, id, data) {
     console.log(`remove ${name}`);
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].id === id) {
+            for (let j = 0; j < data[i].ingredients.length; j++) {
+                const ingredient = data[i].ingredients[j];
+                if (ingredient.name == name) {
+                    ingredient.added = false;
+                    localStorage.setItem("data", JSON.stringify(data));
+                    showMenu();
+                }
+            }
+        }
+    }
+}
+
+function addIngredient(name, id, data) {
+    console.log(`add ${name}`);
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].id === id) {
+            console.log(data[i].id);
+            for (let j = 0; j < data[i].ingredients.length; j++) {
+                const ingredient = data[i].ingredients[j];
+                if (ingredient.name == name) {
+                    ingredient.added = true;
+                    localStorage.setItem("data", JSON.stringify(data));
+                    showMenu();
+                }
+            }
+        }
+    }
 }
 
 async function showMenu() {
@@ -24,7 +53,6 @@ async function showMenu() {
     } else {
         data = await loadMenu();
     }
-    console.log(data);
     const burgerElement = document.getElementById('burgers');
     burgerElement.innerHTML = '';
     for (let i = 0; i < data.length; i++) {
@@ -50,17 +78,30 @@ async function showMenu() {
         for (let j = 0; j < item.ingredients.length; j++) {
             const ingredient = item.ingredients[j];
             const ingredientElement = document.createElement('div');
-            ingredientElement.innerHTML = `
-            <div class="ingredient">
-                <div>
-                    <img src="ingredients/${ingredient.image}" alt="">
-                    <h3>${ingredient.name}</h3>
-                </div>
-                <div>
-                    <button onclick="removeIngredient(${ingredient.name})">-</button>
-                </div>
-            </div>
-            `;
+            ingredientElement.classList.add('ingredient');
+            const ingredientBody = document.createElement('div');
+            const ingredientImage = document.createElement('img');
+            ingredientImage.src = `img/ingredients/${ingredient.image}`;
+            ingredientImage.alt = ingredient.name;
+            ingredientBody.appendChild(ingredientImage);
+            const ingredientName = document.createElement('h3');
+            ingredientName.textContent = ingredient.name;
+            const ingredientButton = document.createElement('button');
+            if (ingredient.added) {
+                ingredientButton.textContent = '-';
+                ingredientButton.addEventListener('click', () => {
+                    removeIngredient(ingredient.name, data[i].id, data);
+                });
+            } else {
+                ingredientBody.classList.add('disabledIngredient');
+                ingredientButton.textContent = '+';
+                ingredientButton.addEventListener('click', () => {
+                    addIngredient(ingredient.name, data[i].id, data);
+                });
+            }
+            ingredientBody.appendChild(ingredientName);
+            ingredientElement.appendChild(ingredientBody);
+            ingredientElement.appendChild(ingredientButton);
             itemElement.querySelector('.ingredients').appendChild(ingredientElement);
         }
         burgerElement.appendChild(itemElement);
@@ -76,23 +117,34 @@ function getCard() {
     return cart;
 }
 
-function addToCard(id) {
+async function addToCard(id) {
     console.log("add to card");
     let cart = [];
     if (localStorage.getItem("cart")) {
         cart = JSON.parse(localStorage.getItem("cart"));
     }
+    if (localStorage.getItem("data")) {
+        data = JSON.parse(localStorage.getItem("data"));
+    } else {
+        data = await loadMenu();
+    }
+    for (let i = 0; i < data.length; i++) {
+        const item = data[i].ingredients;
+        if (item.id === id) {
+            item.ingredients.added = true;
+        }
+    }
     cart.push(id);
     localStorage.setItem("cart", JSON.stringify(cart));
     checkForCart()
-
+    showMenu();
 }
 
 function checkForCart() {
     if (localStorage.getItem("cart")) {
         dot = document.getElementById("redDot");
         dot.innerHTML = `
-        <img src="cart.png" alt="cart">
+        <img src="img/settings/cart.png" alt="cart">
         <h1 class="dot"> ${JSON.parse(localStorage.getItem("cart")).length > 9 ? '9+' : JSON.parse(localStorage.getItem("cart")).length} </h1>
         `;
     }
@@ -107,9 +159,9 @@ document.addEventListener("keydown", function (event) {
     }
 });
 
-setInterval(function() {
-    showMenu();
-}, 5000);
+// setInterval(function() {
+//     showMenu();
+// }, 5000);
 
 showMenu()
 getCard()

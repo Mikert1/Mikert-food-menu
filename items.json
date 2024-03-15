@@ -4,44 +4,53 @@
         "type": "burger",
         "name": "De Mikert Burger",
         "price": 15,
-        "image": "pictures/burger.png",
+        "image": "img/burger.png",
         "ingredients": 
         [
             {
                 "name": "Burger Bun",
-                "image": "burgerbun.png"
+                "image": "burgerbun.png",
+                "added": true
             },
             {
                 "name": "lettuce",
-                "image": "lettuce.png"
+                "image": "lettuce.png",
+                "added": true
             },
             {
                 "name": "Tomato",
-                "image": "tomato.png"
+                "image": "tomato.png",
+                "added": true
             },
             {
                 "name": "Pickle",
-                "image": "pickle.png"
+                "image": "pickle.png",
+                "added": true
             },
             {
                 "name": "Cheese",
-                "image": "cheese.png"
+                "image": "cheese.png",
+                "added": true
             },
             {
                 "name": "Ketchup",
-                "image": "redsaus.png"
+                "image": "redsaus.png",
+                "added": true
             },
             {
                 "name": "Beef patty",
-                "image": "patty.png"
+                "image": "patty.png",
+                "added": true
             },
             {
                 "name": "Red Onion",
-                "image": "redonion.png"
+                "image": "redonion.png",
+                "added": true
             },
             {
                 "name": "Burger Bun",
-                "image": "burgerbun2.png"
+                "image": "burgerbun2.png",
+                "added": true
             
             }
         ],
@@ -52,36 +61,43 @@
         "type": "burger",
         "name": "Chicken Burger",
         "price": 12,
-        "image": "pictures/chicken.png",
+        "image": "img/chicken.png",
         "ingredients": 
         [
             {
                 "name": "Burger Bun",
-                "image": "burgerbun.png"
+                "image": "burgerbun.png",
+                "added": true
             },
             {
                 "name": "Honey Mustard Sauce",
-                "image": "lichtorangesaus.png"
+                "image": "lichtorangesaus.png",
+                "added": true
             },
             {
                 "name": "lettuce",
-                "image": "lettuce.png"
+                "image": "lettuce.png",
+                "added": true
             },
             {
                 "name": "Uitjes",
-                "image": "gebakken-uitjes.png"
+                "image": "gebakken-uitjes.png",
+                "added": true
             },
             {
                 "name": "Cheese",
-                "image": "cheese.png"
+                "image": "cheese.png",
+                "added": true
             },
             {
                 "name": "Chicken patty",
-                "image": "chicken.png"
+                "image": "chicken.png",
+                "added": true
             },
             {
                 "name": "Burger Bun",
-                "image": "burgerbun2.png"
+                "image": "burgerbun2.png",
+                "added": true
             }
         ],
         "disabled": false
@@ -91,33 +107,38 @@
         "type": "burger",
         "name": "Fish Burger",
         "price": 10,
-        "image": "pictures/fish.png",
+        "image": "img/fish.png",
         "ingredients": 
         [
             {
                 "name": "Burger Bun",
-                "image": "burgerbun.png"
+                "image": "burgerbun.png",
+                "added": true
             },
             {
                 "name": "Ravigotte Saus",
-                "image": "whitesaus.png"
+                "image": "whitesaus.png",
+                "added": true
             },
             {
                 "name": "Fish patty",
-                "image": "fish.png"
+                "image": "fish.png",
+                "added": true
             },
             {
                 "name": "Tomato",
-                "image": "tomato.png"
+                "image": "tomato.png",
+                "added": true
             },
             {
                 "name": "lettuce",
-                "image": "lettuce.png"
+                "image": "lettuce.png",
+                "added": true
             },
             {
                 "name": "Burger Bun",
-                "image": "burgerbun2.png"
-            
+                "image": "burgerbun2.png",
+                "added": true
             }
         ],
         "disabled": false
@@ -127,7 +148,7 @@
         "type": "bijgerecht",
         "name": "Patat",
         "price": 3.19,
-        "image": "pictures/patat.png",
+        "image": "img/patat.png",
         "ingredients": 
         [
         ],
@@ -138,40 +159,48 @@
         "type": "sandwich",
         "name": "Club Sandwich",
         "price": 10,
-        "image": "pictures/club.png",
+        "image": "img/club.png",
         "ingredients": 
         [
             {
                 "name": "Burger Bun",
-                "image": "burgerbun.png"
+                "image": "burgerbun.png",
+                "added": true
             },
             {
                 "name": "Egg",
-                "image": "egg.png"
+                "image": "egg.png",
+                "added": true
             },
             {
                 "name": "Tomato",
-                "image": "tomato.png"
+                "image": "tomato.png",
+                "added": true
             },
             {
                 "name": "lettuce",
-                "image": "lettuce.png"
+                "image": "lettuce.png",
+                "added": true
             },
             {
                 "name": "Burger Bun",
-                "image": "burgerbun2.png"
+                "image": "burgerbun2.png",
+                "added": true
             },
             {
                 "name": "Cocktail saus",
-                "image": "lichtorangesaus.png"
+                "image": "lichtorangesaus.png",
+                "added": true
             },
             {
                 "name": "Chicken patty",
-                "image": "chicken.png"
+                "image": "chicken.png",
+                "added": true
             },
             {
                 "name": "Burger Bun",
-                "image": "burgerbun2.png"
+                "image": "burgerbun2.png",
+                "added": true
             }
         ],
         "disabled": false
@@ -181,24 +210,28 @@
         "type": "sandwich",
         "name": "Ham and Cheese Sandwich",
         "price": 8,
-        "image": "pictures/tosti.png",
+        "image": "img/tosti.png",
         "ingredients": 
         [
             {
                 "name": "Burger Bun",
-                "image": "burgerbun.png"
+                "image": "burgerbun.png",
+                "added": true
             },
             {
                 "name": "Ham",
-                "image": "ham.png"
+                "image": "ham.png",
+                "added": true
             },
             {
                 "name": "Cheese",
-                "image": "cheese.png"
+                "image": "cheese.png",
+                "added": true
             },
             {
                 "name": "Burger Bun",
-                "image": "burgerbun2.png"
+                "image": "burgerbun2.png",
+                "added": true
             }
         ],
         "disabled": false
@@ -208,7 +241,7 @@
         "type": "icecream",
         "name": "Moekoe's Mango Icecream",
         "price": 8,
-        "image": "pictures/moekoecollab.png",
+        "image": "img/moekoecollab.png",
         "ingredients": 
         [
 
