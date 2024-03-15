@@ -166,4 +166,3 @@ document.addEventListener("keydown", function (event) {
 showMenu()
 getCard()
 checkForCart()
-console.log("script.js");
