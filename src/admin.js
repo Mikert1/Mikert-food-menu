@@ -97,8 +97,7 @@ function listItemsOfOrder(order, data) {
     buttonElemnt.classList.add('addButton');
     buttonElemnt.onclick = function() {
         const orders = JSON.parse(localStorage.getItem("purchased"));
-        const index = orders.indexOf(order);
-        orders.splice(index, 1);
+        orders.splice(orders.findIndex(item => item.id === order.id), 1);
         localStorage.setItem("purchased", JSON.stringify(orders));
         setOrders();
     }
