@@ -118,4 +118,13 @@ function purchase() {
         window.location.href = "confirm.html";
     }
 }
+
+document.addEventListener("keydown", function (event) {
+    if (event.key === "c") {
+        console.log("clear");
+        localStorage.clear();
+        showCart();
+    }
+});
+
 showCart();
