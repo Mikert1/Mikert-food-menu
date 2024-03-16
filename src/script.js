@@ -118,7 +118,6 @@ function getCard() {
 }
 
 async function addToCard(id) {
-    console.log("add to card");
     let cart = [];
     if (localStorage.getItem("cart")) {
         cart = JSON.parse(localStorage.getItem("cart"));
@@ -128,12 +127,20 @@ async function addToCard(id) {
     } else {
         data = await loadMenu();
     }
+    console.log(data);
     for (let i = 0; i < data.length; i++) {
         const item = data[i].ingredients;
-        if (item.id === id) {
-            item.ingredients.added = true;
+        if (data[i].id === id) {
+            for (let j = 0; j < item.length; j++) {
+                console.log(item[j].added);
+                if (item[j].added === false) {
+                    
+                }
+                item[j].added = true;
+            }
         }
     }
+    localStorage.setItem("data", JSON.stringify(data));
     cart.push(id);
     localStorage.setItem("cart", JSON.stringify(cart));
     checkForCart()

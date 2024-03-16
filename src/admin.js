@@ -90,8 +90,10 @@ function listItemsOfOrder(order, data) {
         orderElement.appendChild(itemElement);
         items.appendChild(orderElement);
     }
+    const buttonContainer = document.createElement('div');
+    buttonContainer.classList.add('container');
     const buttonElemnt = document.createElement('button');
-    buttonElemnt.innerHTML = "Done";
+    buttonElemnt.innerHTML = "Order Done";
     buttonElemnt.classList.add('addButton');
     buttonElemnt.onclick = function() {
         const orders = JSON.parse(localStorage.getItem("purchased"));
@@ -100,7 +102,9 @@ function listItemsOfOrder(order, data) {
         localStorage.setItem("purchased", JSON.stringify(orders));
         setOrders();
     }
-    items.appendChild(buttonElemnt);
+    buttonContainer.appendChild(buttonElemnt);
+    orderElement.appendChild(buttonContainer);
+    items.appendChild(orderElement);
 }
 
 
