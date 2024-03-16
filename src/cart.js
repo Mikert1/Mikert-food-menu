@@ -85,14 +85,12 @@ async function showCart() {
 function checkForCart() {
     const dot = document.getElementById("redDot");
     if (localStorage.getItem("cart")) {
-        console.log(localStorage.getItem("cart").length);
         dot.innerHTML = `
         <img src="img/settings/cart.png" alt="cart">
         <h1 class="dot"> ${JSON.parse(localStorage.getItem("cart")).length > 9 ? '9+' : JSON.parse(localStorage.getItem("cart")).length} </h1>
         `;
     }
     else {
-        console.log("");
         dot.innerHTML = `    
         <img src="img/settings/cart.png" alt="cart">
         `;

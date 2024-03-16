@@ -7,7 +7,6 @@ async function getData() {
         }
         const data = await response.json();
         localStorage.setItem("data", JSON.stringify(data));
-        console.log(data);
         return data;
     } catch (error) {
         console.error('Error fetching:', error);
@@ -43,7 +42,6 @@ async function setOrders() {
     selectedDashboard = false;
     let data;
     if (localStorage.getItem("data")) {
-        console.log("Using local data");
         data = JSON.parse(localStorage.getItem("data"));
     } else {
         data = await getData();
@@ -111,7 +109,6 @@ async function setItems() {
     let data;
     selectedDashboard = true;
     if (localStorage.getItem("data")) {
-        console.log("Using local data");
         data = JSON.parse(localStorage.getItem("data"));
     } else {
         data = await getData();

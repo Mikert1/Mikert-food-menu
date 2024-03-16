@@ -43,7 +43,6 @@ function create() {
             break;
         }
     }
-    console.log(item.id);
     item.name = document.getElementById("name").value;
     item.price = document.getElementById("price").value;
     item.image = document.getElementById("image").value;

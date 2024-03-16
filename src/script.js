@@ -14,7 +14,6 @@ async function loadMenu() {
 }
 
 async function removeIngredient(name, id, data) {
-    console.log(`remove ${name}`);
     for (let i = 0; i < data.length; i++) {
         if (data[i].id === id) {
             for (let j = 0; j < data[i].ingredients.length; j++) {
@@ -30,10 +29,8 @@ async function removeIngredient(name, id, data) {
 }
 
 function addIngredient(name, id, data) {
-    console.log(`add ${name}`);
     for (let i = 0; i < data.length; i++) {
         if (data[i].id === id) {
-            console.log(data[i].id);
             for (let j = 0; j < data[i].ingredients.length; j++) {
                 const ingredient = data[i].ingredients[j];
                 if (ingredient.name == name) {
@@ -118,10 +115,6 @@ function getCard() {
 }
 
 async function addToCard(id) {
-    let cart = [];
-    if (localStorage.getItem("cart")) {
-        cart = JSON.parse(localStorage.getItem("cart"));
-    }
     if (localStorage.getItem("data")) {
         data = JSON.parse(localStorage.getItem("data"));
     } else {
@@ -139,6 +132,11 @@ async function addToCard(id) {
         }
     }
     localStorage.setItem("data", JSON.stringify(data));
+
+    let cart = [];
+    if (localStorage.getItem("cart")) {
+        cart = JSON.parse(localStorage.getItem("cart"));
+    }
     cart.push(id);
     localStorage.setItem("cart", JSON.stringify(cart));
     checkForCart()
