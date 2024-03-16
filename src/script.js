@@ -127,12 +127,10 @@ async function addToCard(id) {
     } else {
         data = await loadMenu();
     }
-    console.log(data);
     for (let i = 0; i < data.length; i++) {
         const item = data[i].ingredients;
         if (data[i].id === id) {
             for (let j = 0; j < item.length; j++) {
-                console.log(item[j].added);
                 if (item[j].added === false) {
                     
                 }
