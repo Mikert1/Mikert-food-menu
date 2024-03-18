@@ -66,18 +66,20 @@ function listItemsOfOrder(order, data) {
     orderElement.classList.add('orders');
     orderElement.innerHTML = `<h1>Table: ${order.id}</h1>`;
     for (const orderItemId of order.items) {
-        const item = data.find(item => item.id === orderItemId);
+        console.log(orderItemId);
+        const item = data.find(item => item.id === orderItemId.id);
         const itemElement = document.createElement('div');
         itemElement.classList.add('item');
         itemElement.innerHTML = `
         <div class="adminProduct">
         <div>
-        <p>${item.name}</p>
+        <p>${item.items.name}</p>
         </div>
             <div>
-            <img src="${item.image}" alt="burger">
+            <img src="${item.items.image}" alt="burger">
             </div>
             <div>
+
             </div>
             <div class="container">
             <label for="done">Done:</label>
