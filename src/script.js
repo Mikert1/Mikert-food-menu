@@ -115,6 +115,7 @@ function getCard() {
 }
 
 async function addToCard(id) {
+    let removeIngredients = [];
     if (localStorage.getItem("data")) {
         data = JSON.parse(localStorage.getItem("data"));
     } else {
@@ -125,7 +126,7 @@ async function addToCard(id) {
         if (data[i].id === id) {
             for (let j = 0; j < item.length; j++) {
                 if (item[j].added === false) {
-                    
+                    removeIngredients.push(item[j].name);
                 }
                 item[j].added = true;
             }
@@ -137,9 +138,14 @@ async function addToCard(id) {
     if (localStorage.getItem("cart")) {
         cart = JSON.parse(localStorage.getItem("cart"));
     }
-    cart.push(id);
+    cart.push(
+        {
+            "id" : id,
+            "removeIngredients" : removeIngredients
+        }
+    );
     localStorage.setItem("cart", JSON.stringify(cart));
-    checkForCart()
+    checkForCart();
     showMenu();
 }
 
