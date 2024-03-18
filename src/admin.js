@@ -60,14 +60,17 @@ async function setOrders() {
 
 // Goes through all items of an order and finds the corresponding data for each item
 // Gives the data back
+// the object i get from localstorage is { items: 2, removeIngredients: [] }
+
 function listItemsOfOrder(order, data) {
     const items = document.getElementById("items");
     const orderElement = document.createElement('div');
     orderElement.classList.add('orders');
     orderElement.innerHTML = `<h1>Table: ${order.id}</h1>`;
     for (const orderItemId of order.items) {
+        console.log(order.items);
         console.log(orderItemId);
-        const item = data.find(item => item.id === orderItemId.id);
+        const item = data.find(item => item.id === order.id);
         const itemElement = document.createElement('div');
         itemElement.classList.add('item');
         itemElement.innerHTML = `
