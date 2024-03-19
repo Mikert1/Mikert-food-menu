@@ -69,7 +69,6 @@ function listItemsOfOrder(order, data) {
     for (let item of data) {
         for (let i = 0; i < order.item.length; i++) {
             element = order.item[i];
-            console.log(element.removeIngredients);
             if (item.id === element.item) {
                 const itemElement = document.createElement('div');
                 itemElement.classList.add('item');
@@ -83,7 +82,9 @@ function listItemsOfOrder(order, data) {
                     </div>
                     <div class="tooltip">
                         ${element.removeIngredients.length < 1 ? `<p>Ingredienten</p>` : `<p class="ingredientChanged">Ingredienten</p>`}
-                        <span class="tooltiptext">${item.ingredients.map(ingredient => ingredient.name).join(', ')}</span>
+                        <span id="tooltiptext">
+
+                        </span>
                     </div>
                     <div class="container">
                         <label for="done">Done:</label>
@@ -93,6 +94,19 @@ function listItemsOfOrder(order, data) {
                 `;
                 orderElement.appendChild(itemElement);
                 items.appendChild(orderElement);
+                const ingredientElememnt = document.querySelectorAll('#tooltiptext');
+                for (let j = 0; j < item.ingredients.length; j++) {
+                    for (let l = 0; l < element.removeIngredients.length; l++) {
+                        if (element.removeIngredients[l] === item.ingredients[j].name) {
+                            console.log(item.ingredients[j].name);
+                            const ingredient = document.createElement('p');
+                            ingredient.classList.add('disabledIngredient');
+                            ingredient.innerHTML = `${item.ingredients[j].name}`;
+                            console.log(i)
+                            ingredientElememnt[i].appendChild(ingredient);
+                        }
+                    }
+                }
             }
         }
     }
@@ -162,12 +176,12 @@ async function setItems() {
     }
 }
 
-setInterval(function() {
-    if (selectedDashboard == true) {
-        setItems();
-    } else {
-        setOrders();
-    }
-}, 5000);
+// setInterval(function() {
+//     if (selectedDashboard == true) {
+//         setItems();
+//     } else {
+//         setOrders();
+//     }
+// }, 5000);
 
 setOrders();

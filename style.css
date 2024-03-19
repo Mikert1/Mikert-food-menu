@@ -393,7 +393,7 @@ input {
     border-bottom: 1px dotted black;
   }
   
-  .tooltip .tooltiptext {
+  .tooltip #tooltiptext {
     visibility: hidden;
     width: 120px;
     background-color: black;
@@ -407,11 +407,12 @@ input {
     position: absolute;
     z-index: 1;
     top: 100%;
-    left: 35%;
+    left: 50%;
+    transform: translateX(-50%);
     
   }
   
-  .tooltip:hover .tooltiptext {
+  .tooltip:hover #tooltiptext {
     visibility: visible;
   }
 
