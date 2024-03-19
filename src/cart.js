@@ -49,7 +49,7 @@ async function showCart() {
     const cartElement = document.getElementById('cart');
     cartElement.innerHTML = '';
     for (let i = 0; i < cart.length; i++) {
-        const item = cart[i];
+        const item = cart[i].item;
         for (let j = 0; j < data.length; j++) {
             if (data[j].id === item) {
                 const itemElement = document.createElement('div');
@@ -109,7 +109,7 @@ function purchase() {
         let purchased = JSON.parse(localStorage.getItem("purchased"));
         purchased.push(
             {
-            "items" : data,
+            "item" : data,
             "id": Math.floor(Math.random() * 20) + 1,
             }
         );

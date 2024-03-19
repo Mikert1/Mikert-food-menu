@@ -140,7 +140,7 @@ async function addToCard(id) {
     }
     cart.push(
         {
-            "items" : id,
+            "item" : id,
             "removeIngredients" : removeIngredients
         }
     );
