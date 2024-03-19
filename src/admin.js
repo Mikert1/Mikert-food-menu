@@ -60,38 +60,39 @@ async function setOrders() {
 
 // Goes through all items of an order and finds the corresponding data for each item
 // Gives the data back
-// the object i get from localstorage is { items: 2, removeIngredients: [] }
 
 function listItemsOfOrder(order, data) {
     const items = document.getElementById("items");
     const orderElement = document.createElement('div');
     orderElement.classList.add('orders');
     orderElement.innerHTML = `<h1>Table: ${order.id}</h1>`;
-    for (const orderItemId of order.items) {
-        console.log(order.items);
-        console.log(orderItemId);
-        const item = data.find(item => item.id === order.id);
-        const itemElement = document.createElement('div');
-        itemElement.classList.add('item');
-        itemElement.innerHTML = `
-        <div class="adminProduct">
-        <div>
-        <p>${item.items.name}</p>
-        </div>
-            <div>
-            <img src="${item.items.image}" alt="burger">
-            </div>
-            <div>
-
-            </div>
-            <div class="container">
-            <label for="done">Done:</label>
-            <input type="checkbox" id="done"></input>
-            </div>
-        </div>
-        `;
-        orderElement.appendChild(itemElement);
-        items.appendChild(orderElement);
+    console.log(order.item);
+    for (let item of data) {
+        for (let i = 0; i < order.item.length; i++) {
+            element = order.item[i].item;
+            if (item.id === element) {
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('item');
+                itemElement.innerHTML = `
+                <div class="adminProduct">
+                    <div>
+                        <p>${item.name}</p>
+                    </div>
+                    <div>
+                        <img src="${item.image}" alt="burger">
+                    </div>
+                    <div>
+                    </div>
+                    <div class="container">
+                        <label for="done">Done:</label>
+                        <input type="checkbox" id="done"></input>
+                    </div>
+                </div>
+                `;
+                orderElement.appendChild(itemElement);
+                items.appendChild(orderElement);
+            }
+        }
     }
     const buttonContainer = document.createElement('div');
     buttonContainer.classList.add('container');
