@@ -66,7 +66,6 @@ function listItemsOfOrder(order, data) {
     const orderElement = document.createElement('div');
     orderElement.classList.add('orders');
     orderElement.innerHTML = `<h1>Table: ${order.id}</h1>`;
-    console.log(order.item);
     for (let item of data) {
         for (let i = 0; i < order.item.length; i++) {
             element = order.item[i].item;
@@ -81,7 +80,10 @@ function listItemsOfOrder(order, data) {
                     <div>
                         <img src="${item.image}" alt="burger">
                     </div>
-                    <div>
+                    <div class="tooltip">
+                        <p>Ingredienten</p>
+                        
+                        <span class="tooltiptext">${item.ingredients.map(ingredient => ingredient.name).join(', ')}</span>
                     </div>
                     <div class="container">
                         <label for="done">Done:</label>
