@@ -399,17 +399,25 @@ input {
     background-color: black;
     color: #fff;
     text-align: center;
-    padding: 5px 0;
     border-radius: 6px;
-   
+    padding: 5px 0;
+  
+    /* Position the tooltip */
+    /* center the tooltip */
     position: absolute;
     z-index: 1;
+    top: 100%;
+    left: 35%;
+    
   }
   
   .tooltip:hover .tooltiptext {
     visibility: visible;
   }
 
+  .ingredientChanged {
+        color: rgb(11, 128, 0);
+  }
 /* als de pixels minder zijn 600 dan ... */
 
 @media (max-width: 600px) {

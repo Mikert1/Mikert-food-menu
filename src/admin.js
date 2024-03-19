@@ -68,8 +68,9 @@ function listItemsOfOrder(order, data) {
     orderElement.innerHTML = `<h1>Table: ${order.id}</h1>`;
     for (let item of data) {
         for (let i = 0; i < order.item.length; i++) {
-            element = order.item[i].item;
-            if (item.id === element) {
+            element = order.item[i];
+            console.log(element.removeIngredients);
+            if (item.id === element.item) {
                 const itemElement = document.createElement('div');
                 itemElement.classList.add('item');
                 itemElement.innerHTML = `
@@ -81,8 +82,7 @@ function listItemsOfOrder(order, data) {
                         <img src="${item.image}" alt="burger">
                     </div>
                     <div class="tooltip">
-                        <p>Ingredienten</p>
-                        
+                        ${element.removeIngredients.length < 1 ? `<p>Ingredienten</p>` : `<p class="ingredientChanged">Ingredienten</p>`}
                         <span class="tooltiptext">${item.ingredients.map(ingredient => ingredient.name).join(', ')}</span>
                     </div>
                     <div class="container">
