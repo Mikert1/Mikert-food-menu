@@ -31,7 +31,7 @@ nav div img {
 
 #burgers {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
     margin-left: 5%;
     margin-right: 5%;
@@ -421,6 +421,18 @@ input {
         color: rgb(11, 128, 0);
   }
 /* als de pixels minder zijn 600 dan ... */
+
+@media (max-width: 1111px) {
+    #burgers {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
 
 @media (max-width: 600px) {
     .logo-subtext {
