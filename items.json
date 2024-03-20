@@ -3,7 +3,7 @@
         "id": 1,
         "type": "burger",
         "name": "De Mikert Burger",
-        "price": 15,
+        "price": 15.00,
         "image": "img/burger.png",
         "ingredients": 
         [
@@ -60,7 +60,7 @@
         "id": 2,
         "type": "burger",
         "name": "Chicken Burger",
-        "price": 12,
+        "price": 12.00,
         "image": "img/chicken.png",
         "ingredients": 
         [
@@ -106,7 +106,7 @@
         "id": 3,
         "type": "burger",
         "name": "Fish Burger",
-        "price": 10,
+        "price": 10.00,
         "image": "img/fish.png",
         "ingredients": 
         [
@@ -158,7 +158,7 @@
         "id": 5,
         "type": "sandwich",
         "name": "Club Sandwich",
-        "price": 10,
+        "price": 10.00,
         "image": "img/club.png",
         "ingredients": 
         [
@@ -209,7 +209,7 @@
         "id": 6,
         "type": "sandwich",
         "name": "Ham and Cheese Sandwich",
-        "price": 8,
+        "price": 8.00,
         "image": "img/tosti.png",
         "ingredients": 
         [
@@ -240,7 +240,7 @@
         "id": 7,
         "type": "icecream",
         "name": "Moekoe's Mango Icecream",
-        "price": 8,
+        "price": 8.00,
         "image": "img/moekoecollab.png",
         "ingredients": 
         [
