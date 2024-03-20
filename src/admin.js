@@ -71,9 +71,8 @@ function listItemsOfOrder(order, data) {
             element = order.item[i];
             if (item.id === element.item) {
                 const itemElement = document.createElement('div');
-                itemElement.classList.add('item');
+                itemElement.classList.add('adminProduct');
                 itemElement.innerHTML = `
-                <div class="adminProduct">
                     <div>
                         <p>${item.name}</p>
                     </div>
@@ -90,7 +89,6 @@ function listItemsOfOrder(order, data) {
                         <label for="done">Done:</label>
                         <input type="checkbox" id="done"></input>
                     </div>
-                </div>
                 `;
                 orderElement.appendChild(itemElement);
                 items.appendChild(orderElement);
