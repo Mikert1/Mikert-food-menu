@@ -20,6 +20,8 @@
     <li>See that everything worked and a button back to the menu.</li>
 </ul>
 
+<hr>
+
 <p><a href="https://mikert1.github.io/Mikert-food-menu/admin.html">Admin View</a></p>
 
 <p>Admin page (Dashboard):</p>
