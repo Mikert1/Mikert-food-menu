@@ -253,6 +253,12 @@ nav div img {
     object-fit: contain;
 }
 
+.adminProduct img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
 .itemInfo {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -266,6 +272,7 @@ nav div img {
     border-radius: 20px;
     height: 100px;
     width: 100%;
+    margin-bottom: 20px;
 }
 
 
@@ -440,5 +447,17 @@ input {
     }
     .item {
         width: 100%;
+    }
+    .orders {
+        height: 100%;
+    }
+    .adminProduct {
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .adminProduct div {
+        width: 50%;
+        text-align: center;
     }
 }

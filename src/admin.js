@@ -154,22 +154,20 @@ async function setItems() {
     for (let i = 0; i < data.length; i++) {
         const item = data[i];
         const itemElement = document.createElement('div');
-        itemElement.classList.add('item');
+        itemElement.classList.add('adminProduct');
         itemElement.innerHTML = `
-        <div class="adminProduct">
-            <div>
-                <p>${item.name}</p>
-            </div>
-            <div>
-                <img src="${item.image}" alt="burger">
-            </div>
-            <div>
-                <p>${item.price},-</p>
-            </div>
-            <div>
-                ${item.disabled == true ? `<button onclick="enable(${item.id})" class="adminEnable">Enable</button>` : `<button onclick="disable(${item.id})" class="adminDisable">Disable</button>`}
-                <button class="adminEdit" onclick="edit(${item.id})">Edit</button>
-            </div>
+        <div>
+            <p>${item.name}</p>
+        </div>
+        <div>
+            <img src="${item.image}" alt="burger">
+        </div>
+        <div>
+            <p>${item.price},-</p>
+        </div>
+        <div>
+            ${item.disabled == true ? `<button onclick="enable(${item.id})" class="adminEnable">Enable</button>` : `<button onclick="disable(${item.id})" class="adminDisable">Disable</button>`}
+            <button class="adminEdit" onclick="edit(${item.id})">Edit</button>
         </div>
         `;
         items.appendChild(itemElement);
