@@ -167,9 +167,9 @@ async function setItems() {
         </div>
         <div>
         ${item.disabled == true ?
-            `<button onclick="enable(${item.id})" class="adminEnable">Enable</button>` :
-            `<button onclick="disable(${item.id})" class="adminDisable">Disable</button>`
-        }
+                `<button onclick="enable(${item.id})" class="adminEnable">Enable</button>` :
+                `<button onclick="disable(${item.id})" class="adminDisable">Disable</button>`
+            }
         <button class="adminEdit" onclick="edit(${item.id})">Edit</button>
         </div>
         `;

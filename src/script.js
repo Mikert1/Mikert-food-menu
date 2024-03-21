@@ -64,9 +64,9 @@ async function showMenu() {
         <div class="product-price">
             <h3>${item.price},-</h3>
             ${item.disabled == true ?
-                `<button class="disable">Not avalible</button>` :
-                `<button onclick="addToCard(${item.id})">Add to card</button>`
-            }
+            `<button class="disable">Not avalible</button>` :
+            `<button onclick="addToCard(${item.id})">Add to card</button>`
+        }
         </div>
         <div class="product-info">
             <h2>ingredienten</h2>
@@ -106,7 +106,7 @@ async function showMenu() {
         }
         burgerElement.appendChild(itemElement);
     }
-    checkForCart()
+    checkForCart();
 }
 
 function getCard() {
@@ -119,6 +119,7 @@ function getCard() {
 
 async function addToCard(id) {
     let removeIngredients = [];
+    let data;
     if (localStorage.getItem("data")) {
         data = JSON.parse(localStorage.getItem("data"));
     } else {
