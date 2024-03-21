@@ -76,7 +76,7 @@ async function showCart() {
         }
     }
     document.getElementById('total').innerHTML = `
-        <h1>Total: € ${total},-</h1>
+        <h1>Total: € ${total.toFixed(2)},-</h1>
         <h3>Item amount: ${cart.length}</h3>
     `;
     checkForCart()
