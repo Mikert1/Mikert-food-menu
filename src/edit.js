@@ -8,7 +8,7 @@ async function getData() {
         if (localStorage.getItem("data")) {
             data = JSON.parse(localStorage.getItem("data"));
         } else {
-            data = localStorage.setItem("data", JSON.stringify(data));;
+            data = localStorage.setItem("data", JSON.stringify(data));
         }
         return data;
     } catch (error) {
@@ -19,39 +19,40 @@ async function getData() {
 
 function deleteItem(id) {
     const data = JSON.parse(localStorage.getItem("data"));
-    const item = data.find(item => item.id === id);
-    data.splice(data.indexOf(item), 1);
-    localStorage.setItem("data", JSON.stringify(data));
+    const itemIndex = data.findIndex(item => item.id === id);
+    if (itemIndex !== -1) {
+        data.splice(itemIndex, 1);
+        localStorage.setItem("data", JSON.stringify(data));
+    }
     window.location.href = "admin.html";
 }
 
 function save(id) {
     const data = JSON.parse(localStorage.getItem("data"));
-    const item = data.find(item => item.id === id);
-    item.name = document.getElementById("name").value;
-    item.price = document.getElementById("price").value;
-    item.image = document.getElementById("image").value;
+    const existingItem = data.find(item => item.id === id);
+    existingItem.name = document.getElementById("name").value;
+    existingItem.price = document.getElementById("price").value;
+    existingItem.image = document.getElementById("image").value;
     localStorage.setItem("data", JSON.stringify(data));
     window.location.href = "admin.html";
 }
 function create() {
     const data = JSON.parse(localStorage.getItem("data"));
-    const item = {};
+    const newItem = {};
     for (let i = 0; i < data.length + 1; i++) {
         if (data.find(item => item.id === i) === undefined) {
-            item.id = i;
+            newItem.id = i;
             break;
         }
     }
-    item.name = document.getElementById("name").value;
-    item.price = document.getElementById("price").value;
-    item.image = document.getElementById("image").value;
-    item.ingredients = [];
-    item.disabled = true;
-    data.push(item);
+    newItem.name = document.getElementById("name").value;
+    newItem.price = document.getElementById("price").value;
+    newItem.image = document.getElementById("image").value;
+    newItem.ingredients = [];
+    newItem.disabled = true;
+    data.push(newItem);
     localStorage.setItem("data", JSON.stringify(data));
     window.location.href = "admin.html";
-
 }
 
 function preview() {
@@ -65,12 +66,13 @@ async function setItem() {
     let id = Number(urlParams.get('id'));
     const item = data.find((items, index) => {
         if (items.id === id) {
-            indexInData = index;
+            const indexInData = index;
             return items;
         }
         if (id === null) {
             return null;
         }
+        return null;
     });
     if (item) {
         editElement.innerHTML = `

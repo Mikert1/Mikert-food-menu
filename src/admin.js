@@ -80,12 +80,13 @@ function listItemsOfOrder(order, data) {
                         <img src="${item.image}" alt="burger">
                     </div>
                     <div class="tooltip">
-                        ${element.removeIngredients.length < 1 ? 
+                    ${element.removeIngredients.length < 1 ?
                         `<p>Ingredienten</p>` :
-                        `<p class="ingredientChanged">Ingredienten</p>`}
-                        <span id="tooltiptext">
+                        `<p class="ingredientChanged">Ingredienten</p>`
+                    }
+                    <span id="tooltiptext">
 
-                        </span>
+                    </span>
                     </div>
                     <div class="container">
                         <label for="done">Done:</label>
@@ -165,10 +166,11 @@ async function setItems() {
             <p>${item.price},-</p>
         </div>
         <div>
-            ${item.disabled == true ? 
+        ${item.disabled == true ?
             `<button onclick="enable(${item.id})" class="adminEnable">Enable</button>` :
-            `<button onclick="disable(${item.id})" class="adminDisable">Disable</button>`}
-            <button class="adminEdit" onclick="edit(${item.id})">Edit</button>
+            `<button onclick="disable(${item.id})" class="adminDisable">Disable</button>`
+        }
+        <button class="adminEdit" onclick="edit(${item.id})">Edit</button>
         </div>
         `;
         items.appendChild(itemElement);

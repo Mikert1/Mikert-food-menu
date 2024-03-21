@@ -89,7 +89,8 @@ function checkForCart() {
         <img src="img/settings/cart.png" alt="cart">
         <h1 class="dot"> 
             ${JSON.parse(localStorage.getItem("cart")).length > 9 ?
-            '9+' : JSON.parse(localStorage.getItem("cart")).length}
+            '9+' : JSON.parse(localStorage.getItem("cart")).length
+        }
         </h1>
         `;
     } else {
@@ -112,7 +113,7 @@ function purchase() {
             {
                 item: data,
                 id: Math.floor(Math.random() * 20) + 1
-            }
+            },
         );
         localStorage.setItem("purchased", JSON.stringify(purchased));
         localStorage.removeItem("cart");
