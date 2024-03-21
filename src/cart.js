@@ -30,7 +30,7 @@ async function getCart() {
 function removeFromCard(id) {
     let cart = JSON.parse(localStorage.getItem("cart"));
     for (let i = 0; i < cart.length; i++) {
-        if (cart[i] === id) {
+        if (cart[i].item === id) {
             cart.splice(i, 1);
             break;
         }
