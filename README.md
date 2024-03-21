@@ -1,26 +1,29 @@
 <h1>Mikert Menu</h1>
 <h2>Imagine walking into a resturant and getting a tablet to order a meal.</h2>
 <p><a href="https://mikert1.github.io/Mikert-food-menu/index.html">Customer View</a></p>
-<p>Homepage:</p>
+<h3>The waiter explains to you how it works:</h3>
+<p>In the Homepage:</p>
 <ul>
     <li>You can scroll through the list of food you can buy.</li>
     <li>Edit the item ingredients.</li>
-    <li>Add a item to cart.</li>
-    <li>Click on the cart to go to your cart.</li>
+    <li>And add a item to your cart.</li>
+    <li>To see what is in your cart simply click on the cart.</li>
 </ul>
-<p>Cart:</p>
+<p>In the Cart:</p>
 <ul>
     <li>You can scroll through what you ordered.</li>
     <li>Remove a item from your cart.</li>
-    <li>See the total amount.</li>
+    <li>And See the total amount.</li>
     <li>Click pruchase and you will be redirected to the confirm page.</li>
 </ul>
-<p>Confirm page:</p>
+<p>In the Confirm page:</p>
 <ul>
-    <li>See that everything worked and a button back to the menu.</li>
+    <li>You can see that everything worked and a button back to the menu.</li>
 </ul>
+<h3>If you have eny Questions feel free to ask.</h3>
 
 <hr>
+
 
 <p><a href="https://mikert1.github.io/Mikert-food-menu/admin.html">Admin View</a></p>
 
