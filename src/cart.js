@@ -8,7 +8,7 @@ async function getData() {
         if (localStorage.getItem("data")) {
             data = JSON.parse(localStorage.getItem("data"));
         } else {
-            data = localStorage.setItem("data", JSON.stringify(data));;
+            data = localStorage.setItem("data", JSON.stringify(data));
         }
         return data;
     } catch (error) {
@@ -79,7 +79,7 @@ async function showCart() {
         <h1>Total: € ${total.toFixed(2)},-</h1>
         <h3>Item amount: ${cart.length}</h3>
     `;
-    checkForCart()
+    checkForCart();
 }
 
 function checkForCart() {
@@ -87,10 +87,11 @@ function checkForCart() {
     if (localStorage.getItem("cart")) {
         dot.innerHTML = `
         <img src="img/settings/cart.png" alt="cart">
-        <h1 class="dot"> ${JSON.parse(localStorage.getItem("cart")).length > 9 ? '9+' : JSON.parse(localStorage.getItem("cart")).length} </h1>
+        <h1 class="dot"> 
+            ${JSON.parse(localStorage.getItem("cart")).length > 9 ? '9+' : JSON.parse(localStorage.getItem("cart")).length} 
+        </h1>
         `;
-    }
-    else {
+    } else {
         dot.innerHTML = `    
         <img src="img/settings/cart.png" alt="cart">
         `;
@@ -100,8 +101,7 @@ function checkForCart() {
 function purchase() {
     let data = JSON.parse(localStorage.getItem("cart"));
     if (data === null) {
-        confirm("You have no items in your cart");
-        return;
+        alert("You have no items in your cart");
     } else { 
         if (!localStorage.getItem("purchased")) {
             localStorage.setItem("purchased", JSON.stringify([]));

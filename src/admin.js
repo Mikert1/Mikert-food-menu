@@ -21,16 +21,16 @@ function restore() {
 
 function disable(id) {
     const data = JSON.parse(localStorage.getItem("data"));
-    const item = data.find(item => item.id === id);
-    item.disabled = true;
+    const itemData = data.find(itemData => itemData.id === id);
+    itemData.disabled = true;
     localStorage.setItem("data", JSON.stringify(data));
     setItems();
 }
 
 function enable(id) {
     const data = JSON.parse(localStorage.getItem("data"));
-    const item = data.find(item => item.id === id);
-    item.disabled = false;
+    const itemData = data.find(itemData => itemData.id === id);
+    itemData.disabled = false;
     localStorage.setItem("data", JSON.stringify(data));
     setItems();
 }
@@ -68,7 +68,7 @@ function listItemsOfOrder(order, data) {
     orderElement.innerHTML = `<h1>Table: ${order.id}</h1>`;
     for (let item of data) {
         for (let i = 0; i < order.item.length; i++) {
-            element = order.item[i];
+            const element = order.item[i];
             if (item.id === element.item) {
                 const itemElement = document.createElement('div');
                 itemElement.classList.add('adminProduct');
@@ -80,7 +80,9 @@ function listItemsOfOrder(order, data) {
                         <img src="${item.image}" alt="burger">
                     </div>
                     <div class="tooltip">
-                        ${element.removeIngredients.length < 1 ? `<p>Ingredienten</p>` : `<p class="ingredientChanged">Ingredienten</p>`}
+                        ${element.removeIngredients.length < 1 ? 
+                            `<p>Ingredienten</p>` : 
+                            `<p class="ingredientChanged">Ingredienten</p>`}
                         <span id="tooltiptext">
 
                         </span>
@@ -100,7 +102,6 @@ function listItemsOfOrder(order, data) {
                             const ingredient = document.createElement('p');
                             ingredient.classList.add('disabledIngredient');
                             ingredient.innerHTML = `${item.ingredients[j].name}`;
-                            console.log(i)
                             ingredientElememnt[i].appendChild(ingredient);
                         }
                     }
@@ -113,12 +114,12 @@ function listItemsOfOrder(order, data) {
     const buttonElemnt = document.createElement('button');
     buttonElemnt.innerHTML = "Order Done";
     buttonElemnt.classList.add('addButton');
-    buttonElemnt.onclick = function() {
+    buttonElemnt.onclick = function () {
         const orders = JSON.parse(localStorage.getItem("purchased"));
         orders.splice(orders.findIndex(item => item.id === order.id), 1);
         localStorage.setItem("purchased", JSON.stringify(orders));
         setOrders();
-    }
+    };
     buttonContainer.appendChild(buttonElemnt);
     orderElement.appendChild(buttonContainer);
     items.appendChild(orderElement);
@@ -164,7 +165,9 @@ async function setItems() {
             <p>${item.price},-</p>
         </div>
         <div>
-            ${item.disabled == true ? `<button onclick="enable(${item.id})" class="adminEnable">Enable</button>` : `<button onclick="disable(${item.id})" class="adminDisable">Disable</button>`}
+            ${item.disabled == true ? 
+                `<button onclick="enable(${item.id})" class="adminEnable">Enable</button>` : 
+                `<button onclick="disable(${item.id})" class="adminDisable">Disable</button>`}
             <button class="adminEdit" onclick="edit(${item.id})">Edit</button>
         </div>
         `;
@@ -172,12 +175,12 @@ async function setItems() {
     }
 }
 
-// setInterval(function() {
-//     if (selectedDashboard == true) {
-//         setItems();
-//     } else {
-//         setOrders();
-//     }
-// }, 5000);
+setInterval(function() {
+    if (selectedDashboard == true) {
+        setItems();
+    } else {
+        setOrders();
+    }
+}, 5000);
 
 setOrders();
