@@ -112,7 +112,7 @@ function purchase() {
         purchased.push(
             {
                 item: data,
-                id: Math.floor(Math.random() * 20) + 1
+                id: Math.floor(Math.random() * 20) + 1,
             },
         );
         localStorage.setItem("purchased", JSON.stringify(purchased));

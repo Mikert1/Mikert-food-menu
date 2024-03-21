@@ -144,9 +144,9 @@ async function addToCard(id) {
     }
     cart.push(
         {
-            "item" : id,
-            "removeIngredients" : removeIngredients
-        }
+            item: id,
+            removeIngredients: removeIngredients,
+        },
     );
     localStorage.setItem("cart", JSON.stringify(cart));
     checkForCart();
@@ -155,7 +155,7 @@ async function addToCard(id) {
 
 function checkForCart() {
     if (localStorage.getItem("cart")) {
-        dot = document.getElementById("redDot");
+        let dot = document.getElementById("redDot");
         dot.innerHTML = `
         <img src="img/settings/cart.png" alt="cart">
         <h1 class="dot"> ${JSON.parse(localStorage.getItem("cart")).length > 9 ? '9+' : JSON.parse(localStorage.getItem("cart")).length} </h1>
@@ -172,9 +172,9 @@ document.addEventListener("keydown", function (event) {
     }
 });
 
-// setInterval(function() {
-//     showMenu();
-// }, 5000);
+setInterval(function () {
+    showMenu();
+}, 5000);
 
 showMenu()
 getCard()

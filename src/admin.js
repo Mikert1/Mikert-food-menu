@@ -85,7 +85,7 @@ function listItemsOfOrder(order, data) {
                         `<p class="ingredientChanged">Ingredienten</p>`
                     }
                     <span id="tooltiptext">
-
+                    
                     </span>
                     </div>
                     <div class="container">
