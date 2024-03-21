@@ -88,7 +88,8 @@ function checkForCart() {
         dot.innerHTML = `
         <img src="img/settings/cart.png" alt="cart">
         <h1 class="dot"> 
-            ${JSON.parse(localStorage.getItem("cart")).length > 9 ? '9+' : JSON.parse(localStorage.getItem("cart")).length} 
+            ${JSON.parse(localStorage.getItem("cart")).length > 9 ?
+            '9+' : JSON.parse(localStorage.getItem("cart")).length}
         </h1>
         `;
     } else {
@@ -102,15 +103,15 @@ function purchase() {
     let data = JSON.parse(localStorage.getItem("cart"));
     if (data === null) {
         alert("You have no items in your cart");
-    } else { 
+    } else {
         if (!localStorage.getItem("purchased")) {
             localStorage.setItem("purchased", JSON.stringify([]));
         }
         let purchased = JSON.parse(localStorage.getItem("purchased"));
         purchased.push(
             {
-            "item" : data,
-            "id": Math.floor(Math.random() * 20) + 1,
+                item: data,
+                id: Math.floor(Math.random() * 20) + 1
             }
         );
         localStorage.setItem("purchased", JSON.stringify(purchased));
