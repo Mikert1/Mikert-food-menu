@@ -20,11 +20,11 @@
 <ul>
     <li>You can see that everything worked and a button back to the menu.</li>
 </ul>
-<h3>If you have eny Questions feel free to ask.</h3>
+<h3>The waiter says: If you have eny Questions feel free to ask.</h3>
 
 <hr>
 
-
+<h2>This is the instruction for the Admin page.</h2>
 <p><a href="https://mikert1.github.io/Mikert-food-menu/admin.html">Admin View</a></p>
 
 <p>Admin page (Dashboard):</p>
