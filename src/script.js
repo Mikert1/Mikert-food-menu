@@ -158,7 +158,9 @@ function checkForCart() {
         let dot = document.getElementById("redDot");
         dot.innerHTML = `
         <img src="img/settings/cart.png" alt="cart">
-        <h1 class="dot"> ${JSON.parse(localStorage.getItem("cart")).length > 9 ? '9+' : JSON.parse(localStorage.getItem("cart")).length} </h1>
+        <h1 class="dot">
+            ${JSON.parse(localStorage.getItem("cart")).length > 9 ? '9+' : JSON.parse(localStorage.getItem("cart")).length}
+        </h1>
         `;
     }
 }
@@ -176,6 +178,6 @@ setInterval(function () {
     showMenu();
 }, 5000);
 
-showMenu()
-getCard()
-checkForCart()
+showMenu();
+getCard();
+checkForCart();
