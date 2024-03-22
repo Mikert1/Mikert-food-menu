@@ -64,9 +64,9 @@ async function showMenu() {
         <div class="product-price">
             <h3>${item.price},-</h3>
             ${item.disabled == true ?
-            `<button class="disable">Not avalible</button>` :
-            `<button onclick="addToCard(${item.id})">Add to card</button>`
-        }
+        `<button class="disable">Not avalible</button>` :
+        `<button onclick="addToCard(${item.id})">Add to card</button>`
+}
         </div>
         <div class="product-info">
             <h2>ingredienten</h2>
@@ -159,7 +159,9 @@ function checkForCart() {
         dot.innerHTML = `
         <img src="img/settings/cart.png" alt="cart">
         <h1 class="dot">
-            ${JSON.parse(localStorage.getItem("cart")).length > 9 ? '9+' : JSON.parse(localStorage.getItem("cart")).length}
+            ${JSON.parse(localStorage.getItem("cart")).length > 9
+        ? '9+' : JSON.parse(localStorage.getItem("cart")).length
+}
         </h1>
         `;
     }
