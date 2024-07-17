@@ -1,3 +1,4 @@
+![afbeelding](https://github.com/user-attachments/assets/f9ed3a5a-93a2-4cec-ad9c-b8ff540769be)
 <h1>Mikert Menu</h1>
 <h2>Imagine walking into a resturant and getting a tablet to order a meal.</h2>
 <p><a href="https://mikert1.github.io/Mikert-food-menu/index.html">Customer View</a></p>
